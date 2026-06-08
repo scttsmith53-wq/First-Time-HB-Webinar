@@ -63,6 +63,26 @@
   .reg-body{padding:16px;position:relative;z-index:2;}
   .ghl-form-wrap{width:100%;overflow:hidden;background:#fff;border-radius:4px;}
   .ghl-form-wrap iframe{display:block;width:100%;height:738px;border:none;border-radius:4px;background:#fff;}
+  .reg-button {
+  display:block;
+  width:100%;
+  background:var(--gold);
+  color:var(--black);
+  text-align:center;
+  text-decoration:none;
+  font-size:.86rem;
+  font-weight:800;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+  padding:17px 22px;
+  border:none;
+  transition:background .2s, transform .15s;
+}
+
+.reg-button:hover {
+  background:var(--gold-light);
+  transform:translateY(-1px);
+}
   .reg-microcopy{color:var(--w40);font-size:.66rem;text-align:center;margin-top:12px;line-height:1.55;}
 
   .section{padding:76px 40px;}
@@ -208,13 +228,21 @@
       <div class="reg-head">
         <div class="reg-tag">Reserve Your Spot — It's Free</div>
         <div class="reg-title">5 Mistakes That Cost First-Time Buyers Thousands</div>
-        <p class="reg-support">Enter your information below and we’ll send the webinar details.</p>
+       <p class="reg-support">Click below to register and get the webinar details.</p>
       </div>
       <div class="reg-body">
-        <div class="ghl-form-wrap">
-          <iframe src="https://api.leadconnectorhq.com/widget/form/iTKM4EujTlkp8vtUMe6u" id="inline-iTKM4EujTlkp8vtUMe6u" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Marketing Form - Claim Offer" data-height="738" data-layout-iframe-id="inline-iTKM4EujTlkp8vtUMe6u" data-form-id="iTKM4EujTlkp8vtUMe6u" title="Marketing Form - Claim Offer"></iframe>
-        </div>
-        <div class="reg-microcopy">No pressure. No spam. Just the webinar information and helpful homebuyer education.</div>
+        <a 
+  href="https://api.leadconnectorhq.com/widget/form/iTKM4EujTlkp8vtUMe6u" 
+  class="reg-button"
+  target="_blank"
+  rel="noopener"
+>
+  Reserve My Free Spot
+</a>
+
+<div class="reg-microcopy">
+  Takes less than a minute. No pressure. Just the webinar details and helpful first-time buyer education.
+</div>
       </div>
     </aside>
   </div>
