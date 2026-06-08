@@ -58,41 +58,52 @@
   .p-top{font-size:0.58rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
   .p-bot{font-family:'Merriweather',serif;font-size:0.9rem;font-weight:700;color:var(--white);}
 
-  /* BOOKING CARD */
-  .booking-card{background:var(--black-card);border:1px solid var(--black-border);border-top:3px solid var(--gold);}
-  .bc-head{padding:26px 26px 22px;border-bottom:1px solid var(--black-border);}
-  .bc-tag{font-size:0.6rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-  .bc-title{font-family:'Merriweather',serif;font-size:1.1rem;font-weight:900;color:var(--white);line-height:1.3;}
-  .bc-title span{color:var(--gold);}
-  .bc-body{padding:24px 26px;}
+  <!-- BOOKING CARD -->
+    <div class="booking-card">
+      <div class="bc-head">
+        <div class="bc-tag">Reserve Your Spot — It's Free</div>
+        <div class="bc-title">5 Mistakes That Cost<br>First-Time Buyers <span>Thousands</span></div>
+      </div>
+      <div class="bc-body">
 
-  /* teaser items - NO revealing the mistakes */
-  .teaser-intro{font-size:0.88rem;color:var(--w70);line-height:1.7;margin-bottom:20px;font-weight:300;}
-  .teaser-list{list-style:none;margin-bottom:22px;}
-  .teaser-list li{
-    display:flex;align-items:center;gap:12px;
-    padding:10px 0;border-bottom:1px solid var(--black-border);
-    font-size:0.83rem;color:var(--w70);
-  }
-  .teaser-list li:last-child{border-bottom:none;}
-  .teaser-icon{
-    width:28px;height:28px;border-radius:50%;
-    background:var(--w08);border:1px solid var(--black-border);
-    display:flex;align-items:center;justify-content:center;
-    font-size:0.75rem;flex-shrink:0;
-  }
-  .lock-badge{
-    display:inline-flex;align-items:center;gap:6px;
-    background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);
-    padding:8px 14px;border-radius:3px;
-    font-size:0.72rem;color:var(--gold);font-weight:600;
-    letter-spacing:0.5px;margin-bottom:20px;width:100%;justify-content:center;
-  }
+        <!-- GHL FORM EMBED -->
+        <div class="ghl-form-wrap">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/iTKM4EujTlkp8vtUMe6u"
+            style="width:100%;height:738px;border:none;border-radius:4px;"
+            id="inline-iTKM4EujTlkp8vtUMe6u"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Marketing Form - Claim Offer"
+            data-height="738"
+            data-layout-iframe-id="inline-iTKM4EujTlkp8vtUMe6u"
+            data-form-id="iTKM4EujTlkp8vtUMe6u"
+            title="Marketing Form - Claim Offer">
+          </iframe>
+        </div>
 
-  .cta-btn{display:block;width:100%;background:var(--gold);color:var(--black);font-size:0.86rem;font-weight:700;text-align:center;padding:16px;border:none;cursor:pointer;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:background 0.2s,transform 0.15s;margin-bottom:10px;}
-  .cta-btn:hover{background:var(--gold-light);transform:translateY(-1px);}
-  .bc-note{font-size:0.68rem;color:var(--w40);text-align:center;}
-  .bc-legal{font-size:0.65rem;color:var(--w40);line-height:1.6;border-top:1px solid var(--black-border);padding-top:14px;margin-top:14px;}
+        <p class="teaser-intro">In this free webinar you'll discover what most buyers only learn after they've already paid the price — including things your lender, agent, or friends probably never told you.</p>
+
+        <div class="lock-badge">🔒 Topics revealed on the webinar</div>
+
+        <ul class="teaser-list">
+          <li><div class="teaser-icon">💰</div>One common assumption that costs buyers thousands upfront</li>
+          <li><div class="teaser-icon">📋</div>What most people think is non-negotiable — but isn't</li>
+          <li><div class="teaser-icon">🏠</div>Where buyers lose the most leverage without knowing it</li>
+          <li><div class="teaser-icon">🔍</div>A protection most buyers misuse at the worst moment</li>
+          <li><div class="teaser-icon">🤝</div>The gap that turns small mistakes into expensive ones</li>
+        </ul>
+
+        <div class="bc-legal">
+          This webinar is for educational purposes only. Attendance does not constitute a loan application or commitment to lend. All loan products subject to credit approval. Down payment assistance eligibility varies by program, income, location, and other factors. Individual results may vary. NMLS #2244351 | Citywide Home Loans NMLS #2611.
+        </div>
+      </div>
+    </div>
 
   /* SECTIONS */
   .section{padding:80px 40px;}
