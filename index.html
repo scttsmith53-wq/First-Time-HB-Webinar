@@ -79,19 +79,15 @@
     gap:14px;
   }
 
-  .bw-mark {
-    width:34px;
-    height:34px;
+  .bw-mark-img {
+    width:42px;
+    height:42px;
     border-radius:50%;
+    object-fit:cover;
+    object-position:center top;
     border:1.5px solid var(--gold);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:'Merriweather',serif;
-    font-weight:900;
-    font-size:.72rem;
-    color:var(--gold);
     flex-shrink:0;
+    background:var(--black);
   }
 
   .topbar-text {
@@ -350,6 +346,12 @@
     color:var(--white);
   }
 
+  .hero-side {
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+
   .registration-card {
     background:var(--black-card);
     border:1px solid var(--black-border);
@@ -468,6 +470,111 @@
     text-align:center;
     margin-top:12px;
     line-height:1.55;
+  }
+
+  .home-carousel {
+    position:relative;
+    width:100%;
+    max-width:100%;
+    aspect-ratio:4 / 3;
+    overflow:hidden;
+    border-radius:18px;
+    border:1px solid rgba(201,168,76,.28);
+    background:#050505;
+    box-shadow:0 24px 60px rgba(0,0,0,.55);
+  }
+
+  .home-carousel::after {
+    content:'Starter-home examples';
+    position:absolute;
+    left:14px;
+    top:14px;
+    z-index:4;
+    font-size:.58rem;
+    font-weight:800;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    background:rgba(0,0,0,.52);
+    border:1px solid rgba(201,168,76,.28);
+    padding:7px 9px;
+    border-radius:999px;
+  }
+
+  .carousel-track {
+    width:100%;
+    height:100%;
+    position:relative;
+  }
+
+  .carousel-slide {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transform:scale(1.02);
+    transition:opacity 700ms ease, transform 900ms ease;
+  }
+
+  .carousel-slide.active {
+    opacity:1;
+    transform:scale(1);
+  }
+
+  .carousel-btn {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:38px;
+    height:38px;
+    border-radius:999px;
+    border:1px solid rgba(201,168,76,.35);
+    background:rgba(0,0,0,.45);
+    color:var(--gold-light);
+    font-size:22px;
+    line-height:1;
+    cursor:pointer;
+    z-index:3;
+    transition:background 200ms ease, transform 200ms ease;
+  }
+
+  .carousel-btn:hover {
+    background:rgba(0,0,0,.75);
+    transform:translateY(-50%) scale(1.05);
+  }
+
+  .carousel-prev {
+    left:14px;
+  }
+
+  .carousel-next {
+    right:14px;
+  }
+
+  .carousel-dots {
+    position:absolute;
+    bottom:14px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    z-index:4;
+  }
+
+  .carousel-dot {
+    width:8px;
+    height:8px;
+    border-radius:999px;
+    background:rgba(255,255,255,.35);
+    border:1px solid rgba(201,168,76,.4);
+    cursor:pointer;
+  }
+
+  .carousel-dot.active {
+    background:var(--gold);
   }
 
   .section {
@@ -693,6 +800,10 @@
     line-height:1.9;
     margin-bottom:16px;
     font-weight:300;
+  }
+
+  .about-body strong {
+    color:var(--white);
   }
 
   .about-strip {
@@ -937,7 +1048,7 @@
       gap:30px;
     }
 
-    .registration-card {
+    .hero-side {
       max-width:520px;
       width:100%;
       margin:0 auto;
@@ -1024,10 +1135,14 @@
     .brand-sep {
       display:none;
     }
+
+    .home-carousel {
+      margin-top:0;
+    }
   }
 
   @media(max-width:480px) {
-    .registration-card {
+    .hero-side {
       margin-left:0;
       margin-right:0;
     }
@@ -1063,7 +1178,11 @@
 
 <header class="topbar">
   <div class="topbar-left">
-    <div class="bw-mark">BW</div>
+    <img
+      class="bw-mark-img"
+      src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274dddb7519e9ccc51fea2.webp"
+      alt="Bryce Waite Team"
+    >
     <div class="topbar-text">
       <strong>Part of the Bryce Waite Team</strong>
       <span class="citywide-word">Citywide</span>&nbsp;NMLS <span class="gold-text">#2611</span>
@@ -1142,45 +1261,68 @@
       </div>
     </div>
 
-    <aside class="registration-card" id="register">
-      <div class="reg-head">
-        <div class="reg-tag">Reserve Your Spot — It's Free</div>
-        <div class="reg-title">5 Mistakes That Cost First-Time Buyers Thousands</div>
-        <p class="reg-support">
-          Click below to register and get the webinar details, reminders, and calendar link.
-        </p>
-      </div>
+    <div class="hero-side">
+      <aside class="registration-card" id="register">
+        <div class="reg-head">
+          <div class="reg-tag">Reserve Your Spot — It's Free</div>
+          <div class="reg-title">5 Mistakes That Cost First-Time Buyers Thousands</div>
+          <p class="reg-support">
+            Click below to reserve your spot on the webinar calendar.
+          </p>
+        </div>
 
-      <div class="reg-body">
-        <a
-          href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT"
-          class="reg-button"
-          target="_blank"
-          rel="noopener"
-        >
-          Reserve My Free Spot
-        </a>
+        <div class="reg-body">
+          <a
+            href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT"
+            class="reg-button"
+            target="_blank"
+            rel="noopener"
+          >
+            Reserve My Free Spot
+          </a>
 
-        <ul class="reg-steps">
-          <li>
-            <span class="step-num">1</span>
-            <span>Click the button and complete the quick GHL registration form.</span>
-          </li>
-          <li>
-            <span class="step-num">2</span>
-            <span>You’ll be sent to a thank-you page with the webinar details.</span>
-          </li>
-          <li>
-            <span class="step-num">3</span>
-            <span>Add the webinar to your calendar so you do not miss it.</span>
-          </li>
-        </ul>
+          <ul class="reg-steps">
+            <li>
+              <span class="step-num">1</span>
+              <span>Click the button and choose the webinar time.</span>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <span>Complete the quick registration details.</span>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <span>Add the webinar to your calendar so you do not miss it.</span>
+            </li>
+          </ul>
 
-        <div class="reg-microcopy">
-          Takes less than a minute. After registering, you’ll get the webinar details and calendar link.
+          <div class="reg-microcopy">
+            Takes less than a minute. Choose the webinar time and complete your registration on the next page.
+          </div>
+        </div>
+      </aside>
+
+      <div class="home-carousel" aria-label="Starter home image carousel">
+        <div class="carousel-track">
+          <img src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787ef.png" class="carousel-slide active" alt="First-time homebuyer home at night">
+          <img src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274fd42db4a9d19ae26ca4.png" class="carousel-slide" alt="Modest starter home at dusk">
+          <img src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787f0.png" class="carousel-slide" alt="Starter home with lights on">
+          <img src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e2db4a9d19ae266fd.png" class="carousel-slide" alt="Affordable suburban home at twilight">
+          <img src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e93d93f4248962295.png" class="carousel-slide" alt="First-time buyer home with warm lights">
+        </div>
+
+        <button class="carousel-btn carousel-prev" type="button" aria-label="Previous home image">&#10094;</button>
+        <button class="carousel-btn carousel-next" type="button" aria-label="Next home image">&#10095;</button>
+
+        <div class="carousel-dots" aria-label="Carousel slide indicators">
+          <span class="carousel-dot active" data-slide="0"></span>
+          <span class="carousel-dot" data-slide="1"></span>
+          <span class="carousel-dot" data-slide="2"></span>
+          <span class="carousel-dot" data-slide="3"></span>
+          <span class="carousel-dot" data-slide="4"></span>
         </div>
       </div>
-    </aside>
+    </div>
   </div>
 </section>
 
@@ -1386,6 +1528,66 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const prev = document.querySelector('.carousel-prev');
+  const next = document.querySelector('.carousel-next');
+
+  if (!slides.length || !dots.length || !prev || !next) return;
+
+  let current = 0;
+  let timer;
+
+  function showSlide(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function nextSlide() {
+    showSlide(current + 1);
+  }
+
+  function prevSlide() {
+    showSlide(current - 1);
+  }
+
+  function startAutoPlay() {
+    timer = setInterval(nextSlide, 4500);
+  }
+
+  function resetAutoPlay() {
+    clearInterval(timer);
+    startAutoPlay();
+  }
+
+  next.addEventListener('click', function () {
+    nextSlide();
+    resetAutoPlay();
+  });
+
+  prev.addEventListener('click', function () {
+    prevSlide();
+    resetAutoPlay();
+  });
+
+  dots.forEach(function (dot, index) {
+    dot.addEventListener('click', function () {
+      showSlide(index);
+      resetAutoPlay();
+    });
+  });
+
+  startAutoPlay();
+})();
+</script>
 
 </body>
 </html>
