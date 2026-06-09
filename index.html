@@ -121,7 +121,7 @@
     .topbar-right {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 12px;
       flex-shrink: 0;
     }
 
@@ -151,12 +151,33 @@
       white-space: nowrap;
     }
 
+    .topbar-call {
+      display: inline-block;
+      border: 1px solid rgba(201, 168, 76, 0.55);
+      color: var(--gold-light);
+      background: transparent;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+    }
+
+    .topbar-call:hover {
+      background: rgba(201, 168, 76, 0.08);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
     .topbar-nmls {
       font-size: 0.7rem;
       color: var(--w40);
       line-height: 1.5;
       text-align: right;
       white-space: nowrap;
+      margin-left: 6px;
     }
 
     .gold-text {
@@ -941,6 +962,57 @@
       line-height: 1.5;
     }
 
+    .footer-links {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--black-border);
+    }
+
+    .footer-links-title {
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .footer-link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .footer-link-card {
+      display: block;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(201, 168, 76, 0.28);
+      padding: 15px 16px;
+      transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+    }
+
+    .footer-link-card:hover {
+      background: rgba(201, 168, 76, 0.07);
+      border-color: rgba(201, 168, 76, 0.55);
+      transform: translateY(-1px);
+    }
+
+    .footer-link-card span {
+      display: block;
+      color: var(--gold);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .footer-link-card strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
     .cf-disclosures {
       padding-top: 24px;
       color: var(--w40);
@@ -998,13 +1070,19 @@
       }
 
       .topbar-right {
-        flex-direction: column;
-        align-items: flex-end;
+        flex-direction: row;
+        align-items: center;
         gap: 8px;
       }
 
       .topbar-nmls {
         display: none;
+      }
+
+      .topbar-call,
+      .topbar-cta {
+        padding: 10px 12px;
+        font-size: 0.68rem;
       }
 
       .hero,
@@ -1045,6 +1123,10 @@
       .stats-row {
         grid-template-columns: 1fr;
       }
+
+      .footer-link-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 520px) {
@@ -1052,9 +1134,15 @@
         align-items: flex-start;
       }
 
+      .topbar-text span {
+        display: none;
+      }
+
+      .topbar-call,
       .topbar-cta {
-        padding: 10px 14px;
-        font-size: 0.7rem;
+        padding: 9px 10px;
+        font-size: 0.64rem;
+        letter-spacing: 0.8px;
       }
 
       .reg-head {
@@ -1098,6 +1186,13 @@
       </div>
 
       <div class="topbar-right">
+        <a
+          href="tel:+19705280874"
+          class="topbar-call"
+        >
+          Call Now
+        </a>
+
         <a
           href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT"
           class="topbar-cta"
@@ -1468,6 +1563,32 @@
             We do business in accordance with<br />
             the Fair Housing Act and Equal Credit Opportunity Act.
           </div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-links-title">Helpful Links</div>
+
+        <div class="footer-link-grid">
+          <a
+            href="https://scottsellstherockies.com"
+            class="footer-link-card"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>Real Estate</span>
+            <strong>Search Colorado Homes</strong>
+          </a>
+
+          <a
+            href="https://www.citywidehm.com/loan-officers/scott-smith-2244351"
+            class="footer-link-card"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>Mortgage</span>
+            <strong>Start Your Pre-Approval</strong>
+          </a>
         </div>
       </div>
 
