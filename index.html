@@ -27,28 +27,10 @@
       --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--black);
-      color: var(--white);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", sans-serif; background: var(--black); color: var(--white); line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
 
     .comp-banner {
       background: #0c0c0c;
@@ -59,9 +41,7 @@
       color: var(--w40);
     }
 
-    .comp-banner a {
-      text-decoration: underline;
-    }
+    .comp-banner a { text-decoration: underline; }
 
     .topbar {
       background: rgba(17, 17, 17, 0.96);
@@ -82,12 +62,7 @@
       gap: 24px;
     }
 
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
+    .topbar-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
 
     .bw-mark-img {
       width: 44px;
@@ -100,34 +75,13 @@
       background: var(--black);
     }
 
-    .topbar-text {
-      min-width: 0;
-    }
+    .topbar-text { min-width: 0; }
+    .topbar-text strong { display: block; color: var(--white); font-size: 0.88rem; line-height: 1.2; }
+    .topbar-text span { display: block; color: var(--w55); font-size: 0.74rem; line-height: 1.3; }
 
-    .topbar-text strong {
-      display: block;
-      color: var(--white);
-      font-size: 0.88rem;
-      line-height: 1.2;
-    }
+    .topbar-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 
-    .topbar-text span {
-      display: block;
-      color: var(--w55);
-      font-size: 0.74rem;
-      line-height: 1.3;
-    }
-
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .topbar-cta,
-    .reg-button,
-    .cta-lg {
+    .topbar-cta, .reg-button, .cta-lg {
       display: inline-block;
       background: var(--gold);
       color: #101010;
@@ -138,18 +92,8 @@
       transition: background 0.2s ease, transform 0.15s ease;
     }
 
-    .topbar-cta:hover,
-    .reg-button:hover,
-    .cta-lg:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
-    }
-
-    .topbar-cta {
-      padding: 11px 18px;
-      font-size: 0.74rem;
-      white-space: nowrap;
-    }
+    .topbar-cta:hover, .reg-button:hover, .cta-lg:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .topbar-cta { padding: 11px 18px; font-size: 0.74rem; white-space: nowrap; }
 
     .topbar-call {
       display: inline-block;
@@ -165,11 +109,7 @@
       transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
     }
 
-    .topbar-call:hover {
-      background: rgba(201, 168, 76, 0.08);
-      border-color: var(--gold);
-      transform: translateY(-1px);
-    }
+    .topbar-call:hover { background: rgba(201, 168, 76, 0.08); border-color: var(--gold); transform: translateY(-1px); }
 
     .topbar-nmls {
       font-size: 0.7rem;
@@ -180,10 +120,7 @@
       margin-left: 6px;
     }
 
-    .gold-text {
-      color: var(--gold);
-      font-weight: 700;
-    }
+    .gold-text { color: var(--gold); font-weight: 700; }
 
     .hero {
       position: relative;
@@ -215,13 +152,9 @@
       z-index: 2;
     }
 
-    .hero-copy {
-      padding-top: 4px;
-    }
+    .hero-copy { padding-top: 4px; }
 
-    .eyebrow,
-    .s-eyebrow,
-    .reg-tag {
+    .eyebrow, .s-eyebrow, .reg-tag {
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -232,17 +165,8 @@
       letter-spacing: 3px;
     }
 
-    .eyebrow::before,
-    .s-eyebrow::before {
-      content: "";
-      width: 20px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .eyebrow {
-      margin-bottom: 16px;
-    }
+    .eyebrow::before, .s-eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--gold); }
+    .eyebrow { margin-bottom: 16px; }
 
     h1 {
       font-family: "Merriweather", serif;
@@ -253,20 +177,8 @@
       max-width: 670px;
     }
 
-    h1 em,
-    .s-title em,
-    .bottom-cta h2 em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .hero-rule,
-    .s-rule {
-      width: 44px;
-      height: 2px;
-      background: var(--gold);
-      margin: 20px 0;
-    }
+    h1 em, .s-title em, .bottom-cta h2 em { color: var(--gold); font-style: normal; }
+    .hero-rule, .s-rule { width: 44px; height: 2px; background: var(--gold); margin: 20px 0; }
 
     .hero-sub {
       max-width: 620px;
@@ -277,13 +189,7 @@
       margin-bottom: 22px;
     }
 
-    .quick-value {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      max-width: 650px;
-      margin: 22px 0;
-    }
+    .quick-value { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 650px; margin: 22px 0; }
 
     .value-item {
       background: rgba(255, 255, 255, 0.03);
@@ -292,21 +198,8 @@
       padding: 13px 14px;
     }
 
-    .value-item strong {
-      display: block;
-      font-family: "Merriweather", serif;
-      font-size: 0.92rem;
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
-
-    .value-item span {
-      display: block;
-      color: var(--w55);
-      font-size: 0.8rem;
-      line-height: 1.55;
-      font-weight: 300;
-    }
+    .value-item strong { display: block; font-family: "Merriweather", serif; font-size: 0.92rem; line-height: 1.3; margin-bottom: 4px; }
+    .value-item span { display: block; color: var(--w55); font-size: 0.8rem; line-height: 1.55; font-weight: 300; }
 
     .presenter-strip {
       display: flex;
@@ -329,62 +222,17 @@
       flex-shrink: 0;
     }
 
-    .p-name {
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
+    .p-name { font-size: 0.92rem; font-weight: 700; }
+    .p-creds { font-size: 0.72rem; color: var(--w40); line-height: 1.5; margin-top: 3px; }
+    .p-creds .nmls-tag { color: var(--gold); font-weight: 700; }
 
-    .p-creds {
-      font-size: 0.72rem;
-      color: var(--w40);
-      line-height: 1.5;
-      margin-top: 3px;
-    }
+    .pillars { display: flex; border-top: 1px solid var(--black-border); border-bottom: 1px solid var(--black-border); margin-top: 20px; max-width: 650px; }
+    .pillar { flex: 1; text-align: center; padding: 14px 10px; border-left: 1px solid var(--black-border); }
+    .pillar:first-child { border-left: none; }
+    .p-top { font-size: 0.58rem; color: var(--gold); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
+    .p-bot { font-family: "Merriweather", serif; font-size: 0.9rem; font-weight: 700; }
 
-    .p-creds .nmls-tag {
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .pillars {
-      display: flex;
-      border-top: 1px solid var(--black-border);
-      border-bottom: 1px solid var(--black-border);
-      margin-top: 20px;
-      max-width: 650px;
-    }
-
-    .pillar {
-      flex: 1;
-      text-align: center;
-      padding: 14px 10px;
-      border-left: 1px solid var(--black-border);
-    }
-
-    .pillar:first-child {
-      border-left: none;
-    }
-
-    .p-top {
-      font-size: 0.58rem;
-      color: var(--gold);
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 3px;
-    }
-
-    .p-bot {
-      font-family: "Merriweather", serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
+    .hero-side { display: flex; flex-direction: column; gap: 22px; }
 
     .registration-card {
       background: linear-gradient(180deg, rgba(201,168,76,0.04), transparent 22%), var(--black-card);
@@ -393,61 +241,16 @@
       box-shadow: var(--shadow);
     }
 
-    .reg-head {
-      padding: 22px 24px 14px;
-      border-bottom: 1px solid var(--black-border);
-    }
+    .reg-head { padding: 22px 24px 14px; border-bottom: 1px solid var(--black-border); }
+    .reg-tag { margin-bottom: 8px; }
+    .reg-title { font-family: "Merriweather", serif; font-size: 1.34rem; line-height: 1.25; font-weight: 900; margin-bottom: 10px; }
+    .reg-support { color: var(--w55); font-size: 0.84rem; line-height: 1.6; font-weight: 300; }
+    .reg-body { padding: 16px; }
+    .reg-button { width: 100%; padding: 17px 22px; font-size: 0.87rem; }
 
-    .reg-tag {
-      margin-bottom: 8px;
-    }
-
-    .reg-title {
-      font-family: "Merriweather", serif;
-      font-size: 1.34rem;
-      line-height: 1.25;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .reg-support {
-      color: var(--w55);
-      font-size: 0.84rem;
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    .reg-body {
-      padding: 16px;
-    }
-
-    .reg-button {
-      width: 100%;
-      padding: 17px 22px;
-      font-size: 0.87rem;
-    }
-
-    .reg-steps {
-      list-style: none;
-      margin-top: 18px;
-      border: 1px solid var(--black-border);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .reg-steps li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 13px 12px;
-      border-top: 1px solid var(--black-border);
-      color: var(--w70);
-      font-size: 0.8rem;
-      line-height: 1.55;
-    }
-
-    .reg-steps li:first-child {
-      border-top: none;
-    }
+    .reg-steps { list-style: none; margin-top: 18px; border: 1px solid var(--black-border); background: rgba(255, 255, 255, 0.02); }
+    .reg-steps li { display: flex; gap: 10px; align-items: flex-start; padding: 13px 12px; border-top: 1px solid var(--black-border); color: var(--w70); font-size: 0.8rem; line-height: 1.55; }
+    .reg-steps li:first-child { border-top: none; }
 
     .step-num {
       width: 22px;
@@ -464,12 +267,14 @@
       background: rgba(201, 168, 76, 0.08);
     }
 
-    .reg-microcopy {
+    .reg-microcopy { margin-top: 12px; text-align: center; color: var(--w40); font-size: 0.68rem; line-height: 1.55; }
+
+    .micro-disclosure {
       margin-top: 12px;
-      text-align: center;
       color: var(--w40);
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       line-height: 1.55;
+      text-align: center;
     }
 
     .home-carousel {
@@ -483,36 +288,16 @@
       box-shadow: var(--shadow);
     }
 
-    .carousel-track {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
+    .carousel-track { width: 100%; height: 100%; position: relative; }
+    .carousel-slide { position: absolute; inset: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transform: scale(1.02); transition: opacity 700ms ease, transform 900ms ease; }
+    .carousel-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0,0,0,0.08) 36%, rgba(0,0,0,0.5) 100%); pointer-events: none; }
+    .carousel-slide.active { opacity: 1; transform: scale(1); }
 
-    .carousel-slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transform: scale(1.02);
-      transition: opacity 700ms ease, transform 900ms ease;
-    }
-
-    .carousel-slide::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0,0,0,0.08) 36%, rgba(0,0,0,0.5) 100%);
-      pointer-events: none;
-    }
-
-    .carousel-slide.active {
-      opacity: 1;
-      transform: scale(1);
-    }
+    .slide-home-1 { background-image: url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787ef.png'); }
+    .slide-home-2 { background-image: url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274fd42db4a9d19ae26ca4.png'); }
+    .slide-home-3 { background-image: url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787f0.png'); }
+    .slide-home-4 { background-image: url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e2db4a9d19ae266fd.png'); }
+    .slide-home-5 { background-image: url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e93d93f4248962295.png'); }
 
     .carousel-caption {
       position: absolute;
@@ -550,61 +335,18 @@
       transition: background 200ms ease, transform 200ms ease;
     }
 
-    .carousel-btn:hover {
-      background: rgba(0, 0, 0, 0.75);
-      transform: translateY(-50%) scale(1.05);
-    }
+    .carousel-btn:hover { background: rgba(0, 0, 0, 0.75); transform: translateY(-50%) scale(1.05); }
+    .carousel-prev { left: 14px; }
+    .carousel-next { right: 14px; }
 
-    .carousel-prev {
-      left: 14px;
-    }
+    .carousel-dots { position: absolute; bottom: 14px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 4; }
+    .carousel-dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.35); border: 1px solid rgba(212, 175, 55, 0.4); cursor: pointer; }
+    .carousel-dot.active { background: #d4af37; }
 
-    .carousel-next {
-      right: 14px;
-    }
-
-    .carousel-dots {
-      position: absolute;
-      bottom: 14px;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      z-index: 4;
-    }
-
-    .carousel-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.35);
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      cursor: pointer;
-    }
-
-    .carousel-dot.active {
-      background: #d4af37;
-    }
-
-    .section,
-    .section-tight {
-      padding: 72px 34px;
-    }
-
-    .section-tight {
-      padding-top: 60px;
-      padding-bottom: 60px;
-    }
-
-    .s-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .s-eyebrow {
-      margin-bottom: 14px;
-    }
+    .section, .section-tight { padding: 72px 34px; }
+    .section-tight { padding-top: 60px; padding-bottom: 60px; }
+    .s-inner { max-width: 1100px; margin: 0 auto; }
+    .s-eyebrow { margin-bottom: 14px; }
 
     .s-title {
       font-family: "Merriweather", serif;
@@ -615,558 +357,112 @@
       letter-spacing: -0.02em;
     }
 
-    .teaser-section {
-      background: var(--black-soft);
-      border-top: 1px solid var(--black-border);
-      border-bottom: 1px solid var(--black-border);
-    }
+    .teaser-section { background: var(--black-soft); border-top: 1px solid var(--black-border); border-bottom: 1px solid var(--black-border); }
+    .teaser-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 42px; align-items: start; }
+    .teaser-intro { font-size: 0.98rem; line-height: 1.82; color: var(--w70); font-weight: 300; }
 
-    .teaser-layout {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 42px;
-      align-items: start;
-    }
+    .lock-badge { display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(201, 168, 76, 0.35); background: rgba(201, 168, 76, 0.07); color: var(--gold-light); padding: 10px 14px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.4px; margin-bottom: 16px; }
+    .teaser-list { list-style: none; background: var(--black-card); border: 1px solid var(--black-border); }
+    .teaser-list li { display: flex; align-items: flex-start; gap: 14px; padding: 15px 18px; border-top: 1px solid var(--black-border); color: var(--w85); font-size: 0.9rem; line-height: 1.55; }
+    .teaser-list li:first-child { border-top: none; }
+    .teaser-icon { width: 28px; height: 28px; min-width: 28px; border-radius: 50%; background: rgba(255, 255, 255, 0.06); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; }
 
-    .teaser-intro {
-      font-size: 0.98rem;
-      line-height: 1.82;
-      color: var(--w70);
-      font-weight: 300;
-    }
+    .expect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--black-border); border: 1px solid var(--black-border); }
+    .expect-card { background: var(--black-card); padding: 28px 24px; border-top: 3px solid transparent; transition: background 0.2s ease, border-top-color 0.2s ease; }
+    .expect-card:hover { background: var(--black-hover); border-top-color: var(--gold); }
+    .ec-icon { font-size: 1.4rem; margin-bottom: 14px; }
+    .ec-title { font-family: "Merriweather", serif; font-size: 0.97rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+    .ec-body { font-size: 0.84rem; color: var(--w70); line-height: 1.75; font-weight: 300; }
 
-    .lock-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(201, 168, 76, 0.35);
-      background: rgba(201, 168, 76, 0.07);
-      color: var(--gold-light);
-      padding: 10px 14px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      margin-bottom: 16px;
-    }
+    .about-section { background: var(--black-soft); }
+    .about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 52px; align-items: start; }
+    .about-photo-col { text-align: center; }
+    .about-photo { width: 170px; height: 170px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--gold); box-shadow: 0 0 0 6px rgba(201, 168, 76, 0.07); margin: 0 auto 16px; display: block; }
+    .about-name { font-family: "Merriweather", serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+    .about-role { font-size: 0.68rem; color: var(--w40); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+    .about-nmls { font-size: 0.68rem; color: var(--gold); font-weight: 700; margin-top: 8px; }
+    .about-body p { font-size: 0.95rem; color: var(--w70); line-height: 1.9; margin-bottom: 16px; font-weight: 300; }
+    .about-strip { background: var(--black-card); border: 1px solid var(--black-border); border-left: 3px solid var(--gold); padding: 12px 16px; font-size: 0.76rem; color: var(--w40); line-height: 1.7; margin-top: 8px; }
 
-    .teaser-list {
-      list-style: none;
-      background: var(--black-card);
-      border: 1px solid var(--black-border);
-    }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--black-border); border: 1px solid var(--black-border); margin-top: 48px; }
+    .stat-cell { background: var(--black-card); padding: 24px 14px; text-align: center; }
+    .stat-n { font-family: "Merriweather", serif; font-size: 2rem; font-weight: 900; line-height: 1; margin-bottom: 7px; }
+    .stat-l { font-size: 0.72rem; color: var(--w40); line-height: 1.5; }
 
-    .teaser-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 15px 18px;
-      border-top: 1px solid var(--black-border);
-      color: var(--w85);
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
+    .bottom-cta { background: var(--black); border-top: 1px solid var(--black-border); text-align: center; padding: 72px 34px; position: relative; overflow: hidden; }
+    .bottom-cta::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .bottom-cta h2 { font-family: "Merriweather", serif; font-size: clamp(1.7rem, 3.5vw, 2.7rem); font-weight: 900; line-height: 1.25; margin-bottom: 14px; }
+    .bottom-cta p { font-size: 0.96rem; color: var(--w70); max-width: 560px; margin: 0 auto 30px; line-height: 1.8; font-weight: 300; }
+    .cta-lg { padding: 17px 46px; font-size: 0.88rem; }
 
-    .teaser-list li:first-child {
-      border-top: none;
-    }
+    .comp-footer { background: #080808; border-top: 1px solid var(--black-border); padding: 40px 34px 28px; }
+    .cf-inner { max-width: 1100px; margin: 0 auto; }
+    .cf-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid var(--black-border); }
+    .cf-brand { display: flex; align-items: center; gap: 14px; }
+    .cf-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: center top; border: 1.5px solid var(--gold); background: var(--black); display: block; }
+    .cf-brand-text strong { display: block; font-size: 0.84rem; margin-bottom: 2px; }
+    .cf-brand-text span { font-size: 0.7rem; color: var(--w40); }
+    .brand-sep { width: 1px; height: 36px; background: var(--black-border); margin: 0 4px; }
+    .citywide-footer-logo { text-align: center; }
+    .cw-main { font-family: Georgia, serif; font-size: 1rem; letter-spacing: 4px; color: rgba(255, 255, 255, 0.72); text-transform: uppercase; }
+    .cw-sub { font-size: 0.55rem; letter-spacing: 3px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 3px; margin-top: 3px; }
+    .ehl-block { display: flex; align-items: center; gap: 10px; }
+    .ehl-logo { width: 32px; height: 32px; border: 2px solid var(--w40); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .ehl-text { font-size: 0.66rem; color: var(--w40); line-height: 1.5; }
 
-    .teaser-icon {
-      width: 28px;
-      height: 28px;
-      min-width: 28px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-    }
+    .footer-links { padding: 24px 0; border-bottom: 1px solid var(--black-border); }
+    .footer-links-title { font-size: 0.66rem; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .footer-link-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .footer-link-card { display: block; background: rgba(255, 255, 255, 0.025); border: 1px solid rgba(201, 168, 76, 0.28); padding: 15px 16px; transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease; }
+    .footer-link-card:hover { background: rgba(201, 168, 76, 0.07); border-color: rgba(201, 168, 76, 0.55); transform: translateY(-1px); }
+    .footer-link-card span { display: block; color: var(--gold); font-size: 0.62rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+    .footer-link-card strong { display: block; color: var(--white); font-size: 0.9rem; font-weight: 700; }
 
-    .expect-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--black-border);
-      border: 1px solid var(--black-border);
-    }
-
-    .expect-card {
-      background: var(--black-card);
-      padding: 28px 24px;
-      border-top: 3px solid transparent;
-      transition: background 0.2s ease, border-top-color 0.2s ease;
-    }
-
-    .expect-card:hover {
-      background: var(--black-hover);
-      border-top-color: var(--gold);
-    }
-
-    .ec-icon {
-      font-size: 1.4rem;
-      margin-bottom: 14px;
-    }
-
-    .ec-title {
-      font-family: "Merriweather", serif;
-      font-size: 0.97rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-
-    .ec-body {
-      font-size: 0.84rem;
-      color: var(--w70);
-      line-height: 1.75;
-      font-weight: 300;
-    }
-
-    .about-section {
-      background: var(--black-soft);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 52px;
-      align-items: start;
-    }
-
-    .about-photo-col {
-      text-align: center;
-    }
-
-    .about-photo {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 2px solid var(--gold);
-      box-shadow: 0 0 0 6px rgba(201, 168, 76, 0.07);
-      margin: 0 auto 16px;
-      display: block;
-    }
-
-    .about-name {
-      font-family: "Merriweather", serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .about-role {
-      font-size: 0.68rem;
-      color: var(--w40);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    .about-nmls {
-      font-size: 0.68rem;
-      color: var(--gold);
-      font-weight: 700;
-      margin-top: 8px;
-    }
-
-    .about-body p {
-      font-size: 0.95rem;
-      color: var(--w70);
-      line-height: 1.9;
-      margin-bottom: 16px;
-      font-weight: 300;
-    }
-
-    .about-strip {
-      background: var(--black-card);
-      border: 1px solid var(--black-border);
-      border-left: 3px solid var(--gold);
-      padding: 12px 16px;
-      font-size: 0.76rem;
-      color: var(--w40);
-      line-height: 1.7;
-      margin-top: 8px;
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--black-border);
-      border: 1px solid var(--black-border);
-      margin-top: 48px;
-    }
-
-    .stat-cell {
-      background: var(--black-card);
-      padding: 24px 14px;
-      text-align: center;
-    }
-
-    .stat-n {
-      font-family: "Merriweather", serif;
-      font-size: 2rem;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 7px;
-    }
-
-    .stat-l {
-      font-size: 0.72rem;
-      color: var(--w40);
-      line-height: 1.5;
-    }
-
-    .bottom-cta {
-      background: var(--black);
-      border-top: 1px solid var(--black-border);
-      text-align: center;
-      padding: 72px 34px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bottom-cta::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .bottom-cta h2 {
-      font-family: "Merriweather", serif;
-      font-size: clamp(1.7rem, 3.5vw, 2.7rem);
-      font-weight: 900;
-      line-height: 1.25;
-      margin-bottom: 14px;
-    }
-
-    .bottom-cta p {
-      font-size: 0.96rem;
-      color: var(--w70);
-      max-width: 560px;
-      margin: 0 auto 30px;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    .cta-lg {
-      padding: 17px 46px;
-      font-size: 0.88rem;
-    }
-
-    .comp-footer {
-      background: #080808;
-      border-top: 1px solid var(--black-border);
-      padding: 40px 34px 28px;
-    }
-
-    .cf-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .cf-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--black-border);
-    }
-
-    .cf-brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .cf-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 1.5px solid var(--gold);
-      background: var(--black);
-      display: block;
-    }
-
-    .cf-brand-text strong {
-      display: block;
-      font-size: 0.84rem;
-      margin-bottom: 2px;
-    }
-
-    .cf-brand-text span {
-      font-size: 0.7rem;
-      color: var(--w40);
-    }
-
-    .brand-sep {
-      width: 1px;
-      height: 36px;
-      background: var(--black-border);
-      margin: 0 4px;
-    }
-
-    .citywide-footer-logo {
-      text-align: center;
-    }
-
-    .cw-main {
-      font-family: Georgia, serif;
-      font-size: 1rem;
-      letter-spacing: 4px;
-      color: rgba(255, 255, 255, 0.72);
-      text-transform: uppercase;
-    }
-
-    .cw-sub {
-      font-size: 0.55rem;
-      letter-spacing: 3px;
-      color: rgba(255, 255, 255, 0.4);
-      text-transform: uppercase;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 3px;
-      margin-top: 3px;
-    }
-
-    .ehl-block {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .ehl-logo {
-      width: 32px;
-      height: 32px;
-      border: 2px solid var(--w40);
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .ehl-text {
-      font-size: 0.66rem;
-      color: var(--w40);
-      line-height: 1.5;
-    }
-
-    .footer-links {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--black-border);
-    }
-
-    .footer-links-title {
-      font-size: 0.66rem;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-    }
-
-    .footer-link-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .footer-link-card {
-      display: block;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(201, 168, 76, 0.28);
-      padding: 15px 16px;
-      transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
-    }
-
-    .footer-link-card:hover {
-      background: rgba(201, 168, 76, 0.07);
-      border-color: rgba(201, 168, 76, 0.55);
-      transform: translateY(-1px);
-    }
-
-    .footer-link-card span {
-      display: block;
-      color: var(--gold);
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-
-    .footer-link-card strong {
-      display: block;
-      color: var(--white);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .cf-disclosures {
-      padding-top: 24px;
-      color: var(--w40);
-      font-size: 0.68rem;
-      line-height: 1.9;
-    }
-
-    .cf-disclosures p {
-      margin-bottom: 9px;
-    }
-
-    .cf-disclosures strong {
-      color: rgba(255, 255, 255, 0.56);
-      font-weight: 600;
-    }
-
-    .cf-disclosures a {
-      text-decoration: underline;
-    }
+    .cf-disclosures { padding-top: 24px; color: var(--w40); font-size: 0.68rem; line-height: 1.9; }
+    .cf-disclosures p { margin-bottom: 9px; }
+    .cf-disclosures strong { color: rgba(255, 255, 255, 0.56); font-weight: 600; }
+    .cf-disclosures a { text-decoration: underline; }
 
     @media (max-width: 980px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .hero-side {
-        max-width: 560px;
-        width: 100%;
-        margin: 0 auto;
-        order: -1;
-      }
-
-      .teaser-layout,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .expect-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats-row {
-        grid-template-columns: 1fr 1fr;
-      }
+      .hero-inner { grid-template-columns: 1fr; gap: 30px; }
+      .hero-side { max-width: 560px; width: 100%; margin: 0 auto; order: -1; }
+      .teaser-layout, .about-grid { grid-template-columns: 1fr; }
+      .expect-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
-      .topbar {
-        padding: 12px 18px;
-      }
-
-      .topbar-inner {
-        gap: 12px;
-      }
-
-      .topbar-right {
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .topbar-nmls {
-        display: none;
-      }
-
-      .topbar-call,
-      .topbar-cta {
-        padding: 10px 12px;
-        font-size: 0.68rem;
-      }
-
-      .hero,
-      .section,
-      .section-tight,
-      .bottom-cta,
-      .comp-footer {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      .quick-value {
-        grid-template-columns: 1fr;
-      }
-
-      .pillars {
-        flex-direction: column;
-      }
-
-      .pillar {
-        border-left: none;
-        border-top: 1px solid var(--black-border);
-      }
-
-      .pillar:first-child {
-        border-top: none;
-      }
-
-      .cf-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .brand-sep {
-        display: none;
-      }
-
-      .stats-row {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-link-grid {
-        grid-template-columns: 1fr;
-      }
+      .topbar { padding: 12px 18px; }
+      .topbar-inner { gap: 12px; }
+      .topbar-right { flex-direction: row; align-items: center; gap: 8px; }
+      .topbar-nmls { display: none; }
+      .topbar-call, .topbar-cta { padding: 10px 12px; font-size: 0.68rem; }
+      .hero, .section, .section-tight, .bottom-cta, .comp-footer { padding-left: 18px; padding-right: 18px; }
+      .quick-value { grid-template-columns: 1fr; }
+      .pillars { flex-direction: column; }
+      .pillar { border-left: none; border-top: 1px solid var(--black-border); }
+      .pillar:first-child { border-top: none; }
+      .cf-top { flex-direction: column; align-items: flex-start; }
+      .brand-sep { display: none; }
+      .stats-row { grid-template-columns: 1fr; }
+      .footer-link-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 520px) {
-      .topbar-inner {
-        align-items: flex-start;
-      }
-
-      .topbar-text span {
-        display: none;
-      }
-
-      .topbar-call,
-      .topbar-cta {
-        padding: 9px 10px;
-        font-size: 0.64rem;
-        letter-spacing: 0.8px;
-      }
-
-      .reg-head {
-        padding: 18px 18px 12px;
-      }
-
-      .reg-body {
-        padding: 14px;
-      }
-
-      .carousel-caption {
-        font-size: 14px;
-      }
-
-      .cta-lg {
-        width: 100%;
-      }
+      .topbar-inner { align-items: flex-start; }
+      .topbar-text span { display: none; }
+      .topbar-call, .topbar-cta { padding: 9px 10px; font-size: 0.64rem; letter-spacing: 0.8px; }
+      .reg-head { padding: 18px 18px 12px; }
+      .reg-body { padding: 14px; }
+      .carousel-caption { font-size: 14px; }
+      .cta-lg { width: 100%; }
     }
   </style>
 </head>
 <body>
 
   <div class="comp-banner">
-    This is an educational webinar. Not a commitment to lend. All loan products subject to credit approval and eligibility requirements.
+    Educational webinar only. Not a loan application, loan approval, pre-approval, or commitment to lend. All loans subject to credit approval, program eligibility, property review, and underwriting requirements.
     &nbsp;|&nbsp; <a href="#">Privacy Policy</a>
     &nbsp;|&nbsp; <a href="https://nmlsconsumeraccess.org" target="_blank" rel="noopener">NMLS Consumer Access</a>
   </div>
@@ -1174,11 +470,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="topbar-left">
-        <img
-          class="bw-mark-img"
-          src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274dddb7519e9ccc51fea2.webp"
-          alt="Bryce Waite"
-        />
+        <img class="bw-mark-img" src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274dddb7519e9ccc51fea2.webp" alt="Bryce Waite" />
         <div class="topbar-text">
           <strong>Part of the Bryce Waite Team</strong>
           <span>Citywide Home Loans &nbsp;|&nbsp; NMLS #2611</span>
@@ -1186,25 +478,11 @@
       </div>
 
       <div class="topbar-right">
-        <a
-          href="tel:+19705280874"
-          class="topbar-call"
-        >
-          Call Now
-        </a>
-
-        <a
-          href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT"
-          class="topbar-cta"
-          target="_blank"
-          rel="noopener"
-        >
-          Reserve My Spot
-        </a>
-
+        <a href="tel:+19705280874" class="topbar-call">Call Now</a>
+        <a href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT" class="topbar-cta" target="_blank" rel="noopener">Reserve My Spot</a>
         <div class="topbar-nmls">
           Scott Smith &nbsp;·&nbsp; NMLS <span class="gold-text">#2244351</span><br />
-          Lending in all 50 states &nbsp;·&nbsp; Equal Housing Lender
+          Equal Housing Lender
         </div>
       </div>
     </div>
@@ -1212,68 +490,34 @@
 
   <section class="hero" id="top">
     <div class="hero-line"></div>
-
     <div class="hero-inner">
       <div class="hero-copy">
         <div class="eyebrow">Free Educational Webinar</div>
-
-        <h1>Most first-time buyers lose money before they <em>ever close.</em></h1>
-
+        <h1>Five mistakes that can cost first-time buyers <em>before they close.</em></h1>
         <div class="hero-rule"></div>
-
         <p class="hero-sub">
-          There are five specific mistakes that can cost buyers thousands — and most people do not find out about them until they are already under contract or sitting at the closing table. This webinar walks through what to watch for so you can make a more informed decision whenever you are ready to buy.
+          There are common decisions that may cost first-time buyers more than expected — and many people do not learn about them until they are already under contract or sitting at the closing table. This webinar walks through what to watch for so you can make a more informed decision whenever you are ready to buy.
         </p>
 
         <div class="quick-value">
-          <div class="value-item">
-            <strong>Know what actually matters</strong>
-            <span>Cut through common advice that sounds helpful but can cost you leverage.</span>
-          </div>
-
-          <div class="value-item">
-            <strong>Understand the money points</strong>
-            <span>Learn where buyers often spend more than they needed to upfront.</span>
-          </div>
-
-          <div class="value-item">
-            <strong>Ask better questions</strong>
-            <span>Know what to ask your lender, agent, and seller before you commit.</span>
-          </div>
-
-          <div class="value-item">
-            <strong>Move with more confidence</strong>
-            <span>Get practical education without pressure, hype, or a sales pitch.</span>
-          </div>
+          <div class="value-item"><strong>Know what actually matters</strong><span>Cut through common advice that sounds helpful but may cost you leverage.</span></div>
+          <div class="value-item"><strong>Understand the money points</strong><span>Learn where buyers often spend more than they may have needed to upfront.</span></div>
+          <div class="value-item"><strong>Ask better questions</strong><span>Know what to ask your lender, agent, and seller before you commit.</span></div>
+          <div class="value-item"><strong>Move with more confidence</strong><span>Get practical education without pressure, hype, or a sales pitch.</span></div>
         </div>
 
         <div class="presenter-strip">
-          <img
-            class="presenter-avatar"
-            src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg"
-            alt="Scott Smith"
-          />
+          <img class="presenter-avatar" src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg" alt="Scott Smith" />
           <div>
             <div class="p-name">Scott Smith &nbsp;·&nbsp; Mortgage Advisor</div>
-            <div class="p-creds">
-              Part of the Bryce Waite Team &nbsp;·&nbsp; Citywide Home Loans &nbsp;·&nbsp; NMLS <span class="nmls-tag">#2244351</span>
-            </div>
+            <div class="p-creds">Part of the Bryce Waite Team &nbsp;·&nbsp; Citywide Home Loans &nbsp;·&nbsp; NMLS <span class="nmls-tag">#2244351</span></div>
           </div>
         </div>
 
         <div class="pillars">
-          <div class="pillar">
-            <div class="p-top">Know</div>
-            <div class="p-bot">More.</div>
-          </div>
-          <div class="pillar">
-            <div class="p-top">Keep</div>
-            <div class="p-bot">More.</div>
-          </div>
-          <div class="pillar">
-            <div class="p-top">Close With</div>
-            <div class="p-bot">Confidence.</div>
-          </div>
+          <div class="pillar"><div class="p-top">Know</div><div class="p-bot">More.</div></div>
+          <div class="pillar"><div class="p-top">Keep</div><div class="p-bot">More.</div></div>
+          <div class="pillar"><div class="p-top">Close With</div><div class="p-bot">Confidence.</div></div>
         </div>
       </div>
 
@@ -1281,84 +525,31 @@
         <aside class="registration-card" id="register">
           <div class="reg-head">
             <div class="reg-tag">Reserve Your Spot — It's Free</div>
-            <div class="reg-title">5 Mistakes That Cost First-Time Buyers Thousands</div>
-            <p class="reg-support">
-              Click below to reserve your spot on the webinar calendar.
-            </p>
+            <div class="reg-title">5 Mistakes That Can Cost First-Time Buyers Thousands</div>
+            <p class="reg-support">Click below to reserve your spot on the webinar calendar.</p>
           </div>
-
           <div class="reg-body">
-            <a
-              href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT"
-              class="reg-button"
-              target="_blank"
-              rel="noopener"
-            >
-              Reserve My Free Spot
-            </a>
-
+            <a href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT" class="reg-button" target="_blank" rel="noopener">Reserve My Free Spot</a>
             <ul class="reg-steps">
-              <li>
-                <span class="step-num">1</span>
-                <span>Click the button and choose the webinar time.</span>
-              </li>
-              <li>
-                <span class="step-num">2</span>
-                <span>Complete the quick registration details.</span>
-              </li>
-              <li>
-                <span class="step-num">3</span>
-                <span>Add the webinar to your calendar so you do not miss it.</span>
-              </li>
+              <li><span class="step-num">1</span><span>Click the button and choose the webinar time.</span></li>
+              <li><span class="step-num">2</span><span>Complete the quick registration details.</span></li>
+              <li><span class="step-num">3</span><span>Add the webinar to your calendar so you do not miss it.</span></li>
             </ul>
-
-            <div class="reg-microcopy">
-              Takes less than a minute. Choose the webinar time and complete your registration on the next page.
-            </div>
+            <div class="reg-microcopy">Takes less than a minute. Choose the webinar time and complete your registration on the next page.</div>
+            <div class="micro-disclosure">Registration is for educational content only and is not a loan application, loan approval, pre-approval, or commitment to lend.</div>
           </div>
         </aside>
 
         <div class="home-carousel">
           <div class="carousel-track">
-            <div
-              class="carousel-slide active"
-              style="background-image:url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787ef.png');"
-            >
-              <div class="carousel-caption">First-Home Potential</div>
-            </div>
-
-            <div
-              class="carousel-slide"
-              style="background-image:url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274fd42db4a9d19ae26ca4.png');"
-            >
-              <div class="carousel-caption">The Possibility of Home</div>
-            </div>
-
-            <div
-              class="carousel-slide"
-              style="background-image:url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787f0.png');"
-            >
-              <div class="carousel-caption">Picture What’s Possible</div>
-            </div>
-
-            <div
-              class="carousel-slide"
-              style="background-image:url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e2db4a9d19ae266fd.png');"
-            >
-              <div class="carousel-caption">Where Your Story Starts</div>
-            </div>
-
-            <div
-              class="carousel-slide"
-              style="background-image:url('https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e93d93f4248962295.png');"
-            >
-              <div class="carousel-caption">A Home Within Reach</div>
-            </div>
+            <div class="carousel-slide slide-home-1 active"><div class="carousel-caption">First-Home Potential</div></div>
+            <div class="carousel-slide slide-home-2"><div class="carousel-caption">The Possibility of Home</div></div>
+            <div class="carousel-slide slide-home-3"><div class="carousel-caption">Picture What’s Possible</div></div>
+            <div class="carousel-slide slide-home-4"><div class="carousel-caption">Where Your Story Starts</div></div>
+            <div class="carousel-slide slide-home-5"><div class="carousel-caption">A Home Within Reach</div></div>
           </div>
-
           <button class="carousel-btn carousel-prev" type="button" aria-label="Previous slide">&#10094;</button>
           <button class="carousel-btn carousel-next" type="button" aria-label="Next slide">&#10095;</button>
-
           <div class="carousel-dots">
             <span class="carousel-dot active" aria-label="Slide 1"></span>
             <span class="carousel-dot" aria-label="Slide 2"></span>
@@ -1378,35 +569,16 @@
           <div class="s-eyebrow">What This Webinar Covers</div>
           <h2 class="s-title">Helpful information before you start making offers.</h2>
           <div class="s-rule"></div>
-          <p class="teaser-intro">
-            In this free webinar you'll discover what most buyers only learn after they've already paid the price — including things your lender, agent, or friends probably never told you.
-          </p>
+          <p class="teaser-intro">In this free webinar you'll learn about common risk points buyers often discover too late — including topics your lender, agent, or friends may not have explained in detail.</p>
         </div>
-
         <div>
-          <div class="lock-badge">🔒 Topics revealed on the webinar</div>
-
+          <div class="lock-badge">🔒 Topics covered on the webinar</div>
           <ul class="teaser-list">
-            <li>
-              <div class="teaser-icon">💰</div>
-              <span>One common assumption that costs buyers thousands upfront</span>
-            </li>
-            <li>
-              <div class="teaser-icon">📋</div>
-              <span>What most people think is non-negotiable — but isn't</span>
-            </li>
-            <li>
-              <div class="teaser-icon">🏠</div>
-              <span>Where buyers lose the most leverage without knowing it</span>
-            </li>
-            <li>
-              <div class="teaser-icon">🔍</div>
-              <span>A protection most buyers misuse at the worst moment</span>
-            </li>
-            <li>
-              <div class="teaser-icon">🤝</div>
-              <span>The gap that turns small mistakes into expensive ones</span>
-            </li>
+            <li><div class="teaser-icon">💰</div><span>One common assumption that may cost buyers more upfront</span></li>
+            <li><div class="teaser-icon">📋</div><span>What many people think is non-negotiable — but may not be</span></li>
+            <li><div class="teaser-icon">🏠</div><span>Where buyers can lose leverage without realizing it</span></li>
+            <li><div class="teaser-icon">🔍</div><span>A protection many buyers misunderstand at the wrong moment</span></li>
+            <li><div class="teaser-icon">🤝</div><span>The gap that can turn small mistakes into expensive ones</span></li>
           </ul>
         </div>
       </div>
@@ -1418,31 +590,10 @@
       <div class="s-eyebrow">What You'll Walk Away With</div>
       <h2 class="s-title">Real answers. <em>No guesswork.</em></h2>
       <div class="s-rule"></div>
-
       <div class="expect-grid">
-        <div class="expect-card">
-          <div class="ec-icon">🗺️</div>
-          <div class="ec-title">A clearer picture of what buying actually costs</div>
-          <p class="ec-body">
-            Most buyers are surprised by what they actually need at closing — and by what they may not have needed to spend. You'll leave knowing the difference.
-          </p>
-        </div>
-
-        <div class="expect-card">
-          <div class="ec-icon">🧠</div>
-          <div class="ec-title">The questions you didn't know to ask</div>
-          <p class="ec-body">
-            The mistakes that cost buyers the most are not always obvious. This webinar helps you know what to ask before you are too far into the process.
-          </p>
-        </div>
-
-        <div class="expect-card">
-          <div class="ec-icon">🛡️</div>
-          <div class="ec-title">How to protect yourself at every step</div>
-          <p class="ec-body">
-            From contract to closing, there are specific points where buyers are most exposed. You will learn where those points are and how to think through them.
-          </p>
-        </div>
+        <div class="expect-card"><div class="ec-icon">🗺️</div><div class="ec-title">A clearer picture of what buying may cost</div><p class="ec-body">Many buyers are surprised by what they actually need at closing — and by costs they may have been able to plan for differently. You'll leave with a clearer way to think about the numbers.</p></div>
+        <div class="expect-card"><div class="ec-icon">🧠</div><div class="ec-title">The questions you didn't know to ask</div><p class="ec-body">The mistakes that cost buyers the most are not always obvious. This webinar helps you know what to ask before you are too far into the process.</p></div>
+        <div class="expect-card"><div class="ec-icon">🛡️</div><div class="ec-title">How to protect yourself at every step</div><p class="ec-body">From contract to closing, there are specific points where buyers can be exposed. You will learn where those points are and how to think through them.</p></div>
       </div>
     </div>
   </section>
@@ -1451,172 +602,67 @@
     <div class="s-inner">
       <div class="about-grid">
         <div class="about-photo-col">
-          <img
-            class="about-photo"
-            src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg"
-            alt="Scott Smith"
-          />
+          <img class="about-photo" src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg" alt="Scott Smith" />
           <div class="about-name">Scott Smith</div>
           <div class="about-role">Mortgage Advisor</div>
           <div class="about-nmls">NMLS #2244351</div>
         </div>
-
         <div class="about-body">
           <div class="s-eyebrow">Your Host</div>
-          <h2 class="s-title" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">
-            Part of the Bryce Waite Team<br />
-            at <em>Citywide Home Loans.</em>
-          </h2>
+          <h2 class="s-title" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">Part of the Bryce Waite Team<br />at <em>Citywide Home Loans.</em></h2>
           <div class="s-rule"></div>
-
-          <p>
-            Most first-time buyers do not lose money because they made one big mistake. They lose it because nobody gave them a clear picture of how the process actually works — and where the real risk points are.
-          </p>
-
-          <p>
-            This webinar is built around that gap. It covers what we wish every buyer knew before they started — from how to keep more cash in your pocket at closing, to how to protect yourself in ways most buyers do not even know are options.
-          </p>
-
-          <p>
-            As part of the <strong>Bryce Waite Team at Citywide Home Loans</strong>, we can lend in all 50 states — so wherever you're buying, we can help you put together a plan that fits your actual numbers and timeline.
-          </p>
-
-          <p>
-            After the webinar, you're welcome to book a free one-on-one conversation — no obligation, just clarity.
-          </p>
-
-          <div class="about-strip">
-            <strong>Scott Smith · NMLS #2244351</strong> &nbsp;|&nbsp;
-            Citywide Home Loans NMLS #2611 &nbsp;|&nbsp;
-            Part of the Bryce Waite Team &nbsp;|&nbsp;
-            Lending in all 50 states &nbsp;|&nbsp;
-            Equal Housing Lender
-          </div>
+          <p>Most first-time buyers do not run into problems because of one big mistake. More often, they run into issues because nobody gave them a clear picture of how the process actually works — and where the real risk points are.</p>
+          <p>This webinar is built around that gap. It covers what we wish every buyer understood before they started — from how to better plan for closing costs, to how to protect yourself in ways many buyers do not know are available.</p>
+          <p>Scott Smith is a mortgage loan originator with Citywide Home Loans, NMLS #2611, and part of the Bryce Waite Team. Loan options, licensing, program availability, and loan originator availability may vary by state.</p>
+          <p>After the webinar, you're welcome to book a free one-on-one conversation — no obligation, just clarity.</p>
+          <div class="about-strip"><strong>Scott Smith · NMLS #2244351</strong> &nbsp;|&nbsp; Citywide Home Loans NMLS #2611 &nbsp;|&nbsp; Part of the Bryce Waite Team &nbsp;|&nbsp; Equal Housing Lender</div>
         </div>
       </div>
 
       <div class="stats-row">
-        <div class="stat-cell">
-          <div class="stat-n"><em>5</em></div>
-          <div class="stat-l">mistakes covered in plain English</div>
-        </div>
-
-        <div class="stat-cell">
-          <div class="stat-n"><em>0</em></div>
-          <div class="stat-l">pressure to apply or buy now</div>
-        </div>
-
-        <div class="stat-cell">
-          <div class="stat-n"><em>1</em></div>
-          <div class="stat-l">simple framework for smarter questions</div>
-        </div>
-
-        <div class="stat-cell">
-          <div class="stat-n"><em>Free</em></div>
-          <div class="stat-l">educational webinar registration</div>
-        </div>
+        <div class="stat-cell"><div class="stat-n"><em>5</em></div><div class="stat-l">common buyer mistakes covered in plain English</div></div>
+        <div class="stat-cell"><div class="stat-n"><em>0</em></div><div class="stat-l">pressure to apply or buy now</div></div>
+        <div class="stat-cell"><div class="stat-n"><em>1</em></div><div class="stat-l">simple framework for smarter questions</div></div>
+        <div class="stat-cell"><div class="stat-n"><em>Free</em></div><div class="stat-l">educational webinar registration</div></div>
       </div>
     </div>
   </section>
 
   <section class="bottom-cta">
     <h2>Get the information before you're <em>under pressure.</em></h2>
-    <p>
-      Reserve your spot for the free webinar and learn the five mistakes that can cost first-time buyers thousands before they ever close.
-    </p>
-    <a
-      href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT"
-      class="cta-lg"
-      target="_blank"
-      rel="noopener"
-    >
-      Reserve My Free Spot
-    </a>
+    <p>Reserve your spot for the free webinar and learn about five mistakes that can cost first-time buyers before they close.</p>
+    <a href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT" class="cta-lg" target="_blank" rel="noopener">Reserve My Free Spot</a>
   </section>
 
   <footer class="comp-footer">
     <div class="cf-inner">
       <div class="cf-top">
         <div class="cf-brand">
-          <img
-            class="cf-avatar"
-            src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg"
-            alt="Scott Smith"
-          />
-          <div class="cf-brand-text">
-            <strong>Scott Smith · Part of the Bryce Waite Team</strong>
-            <span>NMLS #2244351 · Citywide Home Loans NMLS #2611</span>
-          </div>
+          <img class="cf-avatar" src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg" alt="Scott Smith" />
+          <div class="cf-brand-text"><strong>Scott Smith · Part of the Bryce Waite Team</strong><span>NMLS #2244351 · Citywide Home Loans NMLS #2611</span></div>
         </div>
-
         <div class="brand-sep"></div>
-
-        <div class="citywide-footer-logo">
-          <div class="cw-main">Citywide</div>
-          <div class="cw-sub">Home Loans</div>
-        </div>
-
-        <div class="ehl-block">
-          <div class="ehl-logo">🏠</div>
-          <div class="ehl-text">
-            <strong style="color: rgba(255,255,255,0.55);">Equal Housing Lender</strong><br />
-            We do business in accordance with<br />
-            the Fair Housing Act and Equal Credit Opportunity Act.
-          </div>
-        </div>
+        <div class="citywide-footer-logo"><div class="cw-main">Citywide</div><div class="cw-sub">Home Loans</div></div>
+        <div class="ehl-block"><div class="ehl-logo">🏠</div><div class="ehl-text"><strong style="color: rgba(255,255,255,0.55);">Equal Housing Lender</strong><br />We do business in accordance with<br />the Fair Housing Act and Equal Credit Opportunity Act.</div></div>
       </div>
 
       <div class="footer-links">
         <div class="footer-links-title">Helpful Links</div>
-
         <div class="footer-link-grid">
-          <a
-            href="https://scottsellstherockies.com"
-            class="footer-link-card"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>Real Estate</span>
-            <strong>Search Colorado Homes</strong>
-          </a>
-
-          <a
-            href="https://www.citywidehm.com/loan-officers/scott-smith-2244351"
-            class="footer-link-card"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>Mortgage</span>
-            <strong>Start Your Pre-Approval</strong>
-          </a>
+          <a href="https://scottsellstherockies.com" class="footer-link-card" target="_blank" rel="noopener"><span>Real Estate</span><strong>Search Colorado Homes</strong></a>
+          <a href="https://www.citywidehm.com/loan-officers/scott-smith-2244351" class="footer-link-card" target="_blank" rel="noopener"><span>Mortgage</span><strong>Start Your Pre-Approval</strong></a>
         </div>
       </div>
 
       <div class="cf-disclosures">
-        <p>
-          <strong>Educational Content Disclosure:</strong> This webinar is provided for educational purposes only. The information presented does not constitute financial, legal, or mortgage advice. Attendance does not constitute a loan application, pre-approval, or commitment to lend.
-        </p>
-
-        <p>
-          <strong>Licensing:</strong> Scott Smith, NMLS #2244351, is a mortgage loan originator operating as part of the Bryce Waite Team at Citywide Home Loans. Citywide Home Loans NMLS #2611. For licensing information, visit
-          <a href="https://nmlsconsumeraccess.org" target="_blank" rel="noopener">nmlsconsumeraccess.org</a>.
-        </p>
-
-        <p>
-          <strong>Down Payment Assistance:</strong> Down payment assistance programs referenced in this webinar are subject to eligibility requirements including but not limited to income limits, property location, credit score, loan type, and program availability. Not all borrowers will qualify. Programs may change or be discontinued at any time.
-        </p>
-
-        <p>
-          <strong>Results Disclaimer:</strong> Any scenarios or outcomes described are illustrative examples only. Individual results vary based on creditworthiness, property type, loan amount, market conditions, and other factors. Past results do not guarantee future outcomes.
-        </p>
-
-        <p>
-          <strong>No Discrimination:</strong> We are committed to the Fair Housing Act and Equal Credit Opportunity Act. We do not discriminate on the basis of race, color, religion, sex, national origin, disability, familial status, age, or any other characteristic protected by law.
-        </p>
-
-        <p>
-          <strong>Privacy:</strong> Information submitted through registration is subject to our <a href="#">Privacy Policy</a>.
-        </p>
+        <p><strong>Educational Content Disclosure:</strong> This webinar is provided for educational purposes only. The information presented does not constitute financial, legal, tax, real estate, or mortgage advice. Attendance does not constitute a loan application, pre-approval, loan approval, or commitment to lend.</p>
+        <p><strong>Mortgage Licensing:</strong> Scott Smith, NMLS #2244351, is a mortgage loan originator with Citywide Home Loans, NMLS #2611, and part of the Bryce Waite Team. Loan options, licensing, program availability, and loan originator availability may vary by state. For licensing information, visit <a href="https://nmlsconsumeraccess.org" target="_blank" rel="noopener">nmlsconsumeraccess.org</a>.</p>
+        <p><strong>Pre-Approval Disclosure:</strong> Any pre-approval is subject to review of credit, income, assets, debts, property, program eligibility, and underwriting requirements. A pre-approval is not a final loan approval or commitment to lend.</p>
+        <p><strong>Real Estate Disclosure:</strong> Real estate services are offered through HomeSmart. Mortgage services are offered through Citywide Home Loans, NMLS #2611. Real estate brokerage services and mortgage lending services are separate services and are subject to their respective licensing and compliance requirements.</p>
+        <p><strong>Down Payment Assistance:</strong> Down payment assistance programs referenced in this webinar, if any, are subject to eligibility requirements including but not limited to income limits, property location, credit score, loan type, and program availability. Not all borrowers will qualify. Programs may change or be discontinued at any time.</p>
+        <p><strong>Results Disclaimer:</strong> Any scenarios or outcomes described are illustrative examples only. Individual results vary based on creditworthiness, property type, loan amount, market conditions, program eligibility, underwriting requirements, and other factors. Past results do not guarantee future outcomes.</p>
+        <p><strong>No Discrimination:</strong> We are committed to the Fair Housing Act and Equal Credit Opportunity Act. We do not discriminate on the basis of race, color, religion, sex, national origin, disability, familial status, age, marital status, receipt of public assistance, or any other characteristic protected by applicable law.</p>
+        <p><strong>Privacy:</strong> Information submitted through registration or appointment scheduling is subject to our <a href="#">Privacy Policy</a>. Calling the number listed on this page may connect you with Scott Smith or a business phone system used for mortgage-related inquiries.</p>
       </div>
     </div>
   </footer>
@@ -1627,56 +673,23 @@
       const dots = document.querySelectorAll(".carousel-dot");
       const prev = document.querySelector(".carousel-prev");
       const next = document.querySelector(".carousel-next");
-
       if (!slides.length || !dots.length || !prev || !next) return;
-
       let current = 0;
       let timer;
-
       function showSlide(index) {
         slides[current].classList.remove("active");
         dots[current].classList.remove("active");
-
         current = (index + slides.length) % slides.length;
-
         slides[current].classList.add("active");
         dots[current].classList.add("active");
       }
-
-      function nextSlide() {
-        showSlide(current + 1);
-      }
-
-      function prevSlide() {
-        showSlide(current - 1);
-      }
-
-      function startAutoPlay() {
-        timer = setInterval(nextSlide, 4500);
-      }
-
-      function resetAutoPlay() {
-        clearInterval(timer);
-        startAutoPlay();
-      }
-
-      next.addEventListener("click", function () {
-        nextSlide();
-        resetAutoPlay();
-      });
-
-      prev.addEventListener("click", function () {
-        prevSlide();
-        resetAutoPlay();
-      });
-
-      dots.forEach(function (dot, index) {
-        dot.addEventListener("click", function () {
-          showSlide(index);
-          resetAutoPlay();
-        });
-      });
-
+      function nextSlide() { showSlide(current + 1); }
+      function prevSlide() { showSlide(current - 1); }
+      function startAutoPlay() { timer = setInterval(nextSlide, 4500); }
+      function resetAutoPlay() { clearInterval(timer); startAutoPlay(); }
+      next.addEventListener("click", function () { nextSlide(); resetAutoPlay(); });
+      prev.addEventListener("click", function () { prevSlide(); resetAutoPlay(); });
+      dots.forEach(function (dot, index) { dot.addEventListener("click", function () { showSlide(index); resetAutoPlay(); }); });
       startAutoPlay();
     })();
   </script>
