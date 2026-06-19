@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Free Webinar | Buy With Confidence | Scott Smith | Citywide Home Mortgage</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
   <!-- Meta Pixel Code -->
-
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -23,466 +21,307 @@
   fbq('init', '879134155809312');
   fbq('track', 'PageView');
   </script>
-
   <!-- End Meta Pixel Code -->
 
   <style>
     :root {
-      --black: #06111f;
-      --black-soft: #0b1a2d;
-      --black-card: #10243a;
-      --black-border: rgba(142, 197, 255, 0.18);
-      --black-hover: #14314f;
-      --gold: #4fb3ff;
-      --gold-light: #9bd8ff;
-      --gold-dim: rgba(79, 179, 255, 0.28);
-      --white: #ffffff;
-      --w85: rgba(255, 255, 255, 0.85);
-      --w70: rgba(255, 255, 255, 0.7);
-      --w55: rgba(255, 255, 255, 0.55);
-      --w40: rgba(255, 255, 255, 0.4);
-      --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+      --surface: #101415;
+      --surface-2: #191c1e;
+      --surface-3: #1d2022;
+      --surface-4: #272a2c;
+      --navy: #0f172a;
+      --ink: #e0e3e5;
+      --muted: #c6c6cd;
+      --faint: rgba(224, 227, 229, 0.62);
+      --line: rgba(255, 255, 255, 0.10);
+      --line-strong: rgba(233, 193, 118, 0.32);
+      --gold: #e9c176;
+      --gold-light: #ffdea5;
+      --gold-dark: #412d00;
+      --blue: #a4c9ff;
+      --shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
+      --max: 1280px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: "Inter", sans-serif;
-      background: var(--black);
-      color: var(--white);
+      font-family: Inter, sans-serif;
+      color: var(--ink);
+      background: var(--surface);
       line-height: 1.6;
       overflow-x: hidden;
     }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
 
     .comp-banner {
-      background: #0c0c0c;
-      border-bottom: 1px solid var(--black-border);
+      background: #0b0f10;
+      border-bottom: 1px solid var(--line);
       padding: 8px 18px;
       text-align: center;
       font-size: 0.68rem;
-      color: var(--w40);
+      color: rgba(224, 227, 229, 0.54);
+      position: relative;
+      z-index: 60;
     }
-
-    .comp-banner a {
-      text-decoration: underline;
-    }
+    .comp-banner a { color: var(--gold-light); text-decoration: underline; }
 
     .topbar {
-      background: rgba(6, 17, 31, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--black-border);
-      padding: 14px 34px;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 50;
+      background: rgba(16, 20, 21, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
     }
-
     .topbar-inner {
-      max-width: 1180px;
+      max-width: var(--max);
       margin: 0 auto;
+      padding: 14px 24px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 22px;
     }
-
-    .topbar-left {
+    .brand {
       display: flex;
       align-items: center;
       gap: 14px;
       min-width: 0;
     }
-
-    .bw-mark-img {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
       object-fit: cover;
       object-position: center top;
       border: 1.5px solid var(--gold);
-      flex-shrink: 0;
-      background: var(--black);
+      box-shadow: 0 0 0 6px rgba(233, 193, 118, 0.06);
+      flex: none;
     }
-
-    .topbar-text strong {
+    .brand strong {
       display: block;
-      color: var(--white);
-      font-size: 0.88rem;
-      line-height: 1.2;
+      font-family: "Playfair Display", serif;
+      font-size: 1.18rem;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
     }
-
-    .topbar-text span {
+    .brand span {
       display: block;
-      color: var(--w55);
-      font-size: 0.74rem;
-      line-height: 1.3;
+      color: var(--faint);
+      font-size: 0.76rem;
+      margin-top: 3px;
     }
-
-    .topbar-right {
+    .nav-actions {
       display: flex;
       align-items: center;
       gap: 12px;
-      flex-shrink: 0;
+      flex: none;
     }
-
-    .topbar-cta,
-    .reg-button,
-    .cta-lg {
-      display: inline-block;
-      background: var(--gold);
-      color: #101010;
-      font-weight: 800;
-      letter-spacing: 1.3px;
+    .portal-note {
+      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--gold-light);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-family: Manrope, sans-serif;
+      font-size: 0.70rem;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
-      text-align: center;
-      transition: background 0.2s ease, transform 0.15s ease;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
-
-    .topbar-cta:hover,
-    .reg-button:hover,
-    .cta-lg:hover {
+    .portal-note:hover { background: rgba(233, 193, 118, 0.09); transform: translateY(-1px); }
+    .topbar-call {
+      color: var(--muted);
+      font-family: Manrope, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .topbar-call:hover { color: var(--ink); }
+    .btn, .reg-button, .cta-lg {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: var(--gold);
+      color: var(--gold-dark);
+      font-family: Manrope, sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn:hover, .reg-button:hover, .cta-lg:hover {
       background: var(--gold-light);
       transform: translateY(-1px);
+      box-shadow: 0 0 24px rgba(233, 193, 118, 0.22);
     }
-
-    .topbar-cta {
-      padding: 11px 18px;
-      font-size: 0.74rem;
-      white-space: nowrap;
-    }
-
-    .topbar-call {
-      display: inline-block;
-      border: 1px solid rgba(79, 179, 255, 0.55);
-      color: var(--gold-light);
-      background: transparent;
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-      padding: 10px 16px;
-      white-space: nowrap;
-      transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
-    }
-
-    .topbar-call:hover {
-      background: rgba(79, 179, 255, 0.08);
-      border-color: var(--gold);
-      transform: translateY(-1px);
-    }
-
-    .topbar-nmls {
-      font-size: 0.7rem;
-      color: var(--w40);
-      line-height: 1.5;
-      text-align: right;
-      white-space: nowrap;
-      margin-left: 6px;
-    }
-
-    .gold-text {
-      color: var(--gold);
-      font-weight: 700;
-    }
+    .btn { padding: 12px 18px; font-size: 0.72rem; white-space: nowrap; }
 
     .hero {
       position: relative;
       overflow: hidden;
+      padding: 80px 24px 72px;
       background:
-        radial-gradient(circle at 18% 16%, rgba(79, 179, 255, 0.18), transparent 30%),
-        radial-gradient(circle at 78% 4%, rgba(255, 255, 255, 0.05), transparent 28%),
-        var(--black);
-      padding: 42px 34px 58px;
+        radial-gradient(circle at top right, rgba(164, 201, 255, 0.07), transparent 36%),
+        radial-gradient(circle at bottom left, rgba(233, 193, 118, 0.08), transparent 42%),
+        var(--surface);
     }
-
-    .hero-line {
+    .hero::before {
+      content: "";
       position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: linear-gradient(180deg, transparent 7%, var(--gold) 34%, var(--gold) 64%, transparent 92%);
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.45), transparent 70%);
+      pointer-events: none;
     }
-
     .hero-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 460px);
-      gap: 46px;
-      align-items: start;
       position: relative;
       z-index: 2;
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 7fr) minmax(360px, 5fr);
+      gap: 52px;
+      align-items: center;
     }
-
-    .hero-copy {
-      padding-top: 4px;
-    }
-
-    .eyebrow,
-    .s-eyebrow,
-    .reg-tag {
+    .eyebrow, .section-eyebrow, .reg-tag {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       color: var(--gold);
-      font-size: 0.66rem;
+      font-family: Manrope, sans-serif;
+      font-size: 0.72rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
     }
-
-    .eyebrow::before,
-    .s-eyebrow::before {
+    .eyebrow::before, .section-eyebrow::before {
       content: "";
-      width: 20px;
+      width: 22px;
       height: 1px;
       background: var(--gold);
     }
-
-    .eyebrow {
-      margin-bottom: 16px;
+    h1, h2, h3, .reg-title {
+      font-family: "Playfair Display", serif;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
     }
-
     h1 {
-      font-family: "Merriweather", serif;
-      font-size: clamp(2.1rem, 4vw, 3.55rem);
-      font-weight: 900;
-      line-height: 1.14;
-      letter-spacing: -0.03em;
-      max-width: 670px;
-    }
-
-    h1 em,
-    .s-title em,
-    .bottom-cta h2 em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .hero-rule,
-    .s-rule {
-      width: 44px;
-      height: 2px;
-      background: var(--gold);
-      margin: 20px 0;
-    }
-
-    .hero-sub {
-      max-width: 620px;
-      color: var(--w70);
-      font-size: 1rem;
-      line-height: 1.8;
-      font-weight: 300;
+      font-size: clamp(2.45rem, 5vw, 4.65rem);
+      max-width: 720px;
       margin-bottom: 22px;
     }
-
+    em { color: var(--gold); font-style: italic; }
+    .hero-rule, .section-rule {
+      width: 46px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 0 22px;
+    }
+    .hero-sub {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.82;
+      font-weight: 300;
+      margin-bottom: 28px;
+    }
     .quick-value {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      max-width: 650px;
-      margin: 22px 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 760px;
     }
-
+    .glass-card, .value-item, .registration-card, .expect-card, .topic-card, .about-strip, .footer-link-card {
+      background: rgba(255, 255, 255, 0.035);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+    }
     .value-item {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--black-border);
-      border-left: 3px solid rgba(79, 179, 255, 0.75);
-      padding: 13px 14px;
+      border-left: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: 18px;
     }
-
     .value-item strong {
       display: block;
-      font-family: "Merriweather", serif;
-      font-size: 0.92rem;
-      line-height: 1.3;
-      margin-bottom: 4px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      margin-bottom: 6px;
     }
+    .value-item span { color: var(--faint); font-size: 0.88rem; line-height: 1.65; }
 
-    .value-item span {
-      display: block;
-      color: var(--w55);
-      font-size: 0.8rem;
-      line-height: 1.55;
-      font-weight: 300;
-    }
-
-    .presenter-strip {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 0;
-      border-top: 1px solid var(--black-border);
-      border-bottom: 1px solid var(--black-border);
-      margin-top: 22px;
-      max-width: 650px;
-    }
-
-    .presenter-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 1.5px solid var(--gold);
-      flex-shrink: 0;
-    }
-
-    .p-name {
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    .p-creds {
-      font-size: 0.72rem;
-      color: var(--w40);
-      line-height: 1.5;
-      margin-top: 3px;
-    }
-
-    .p-creds .nmls-tag {
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .pillars {
-      display: flex;
-      border-top: 1px solid var(--black-border);
-      border-bottom: 1px solid var(--black-border);
-      margin-top: 20px;
-      max-width: 650px;
-    }
-
-    .pillar {
-      flex: 1;
-      text-align: center;
-      padding: 14px 10px;
-      border-left: 1px solid var(--black-border);
-    }
-
-    .pillar:first-child {
-      border-left: none;
-    }
-
-    .p-top {
-      font-size: 0.58rem;
-      color: var(--gold);
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 3px;
-    }
-
-    .p-bot {
-      font-family: "Merriweather", serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-
+    .hero-side { display: flex; flex-direction: column; gap: 24px; }
     .registration-card {
-      background: linear-gradient(180deg, rgba(79,179,255,0.04), transparent 22%), var(--black-card);
-      border: 1px solid var(--black-border);
       border-top: 3px solid var(--gold);
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(233,193,118,0.07), transparent 26%), var(--surface-4);
       box-shadow: var(--shadow);
     }
-
-    .reg-head {
-      padding: 22px 24px 14px;
-      border-bottom: 1px solid var(--black-border);
-    }
-
-    .reg-tag {
-      margin-bottom: 8px;
-    }
-
-    .reg-title {
-      font-family: "Merriweather", serif;
-      font-size: 1.34rem;
-      line-height: 1.25;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .reg-support {
-      color: var(--w55);
-      font-size: 0.84rem;
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    .reg-body {
-      padding: 16px;
-    }
-
-    .reg-button {
-      width: 100%;
-      padding: 17px 22px;
-      font-size: 0.87rem;
-    }
-
+    .reg-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); }
+    .reg-tag { margin-bottom: 10px; }
+    .reg-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 10px; }
+    .reg-support { color: var(--faint); font-size: 0.94rem; }
+    .reg-body { padding: 22px; }
+    .reg-button { width: 100%; padding: 18px 22px; font-size: 0.86rem; }
     .reg-steps {
       list-style: none;
       margin-top: 18px;
-      border: 1px solid var(--black-border);
-      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(11, 15, 16, 0.32);
     }
-
     .reg-steps li {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       align-items: flex-start;
-      padding: 13px 12px;
-      border-top: 1px solid var(--black-border);
-      color: var(--w70);
-      font-size: 0.8rem;
-      line-height: 1.55;
+      padding: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
     }
-
-    .reg-steps li:first-child {
-      border-top: none;
-    }
-
+    .reg-steps li:first-child { border-top: none; }
     .step-num {
-      width: 22px;
-      height: 22px;
-      min-width: 22px;
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
       border-radius: 50%;
-      border: 1px solid rgba(79, 179, 255, 0.4);
+      border: 1px solid var(--line-strong);
       color: var(--gold);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.68rem;
+      font-size: 0.72rem;
       font-weight: 800;
-      background: rgba(79, 179, 255, 0.08);
+      background: rgba(233, 193, 118, 0.07);
     }
-
     .reg-microcopy {
-      margin-top: 12px;
+      margin-top: 14px;
       text-align: center;
-      color: var(--w40);
-      font-size: 0.68rem;
-      line-height: 1.55;
+      color: rgba(224, 227, 229, 0.50);
+      font-size: 0.72rem;
+      line-height: 1.65;
     }
 
     .home-carousel {
@@ -491,81 +330,47 @@
       aspect-ratio: 4 / 3;
       overflow: hidden;
       border-radius: 18px;
-      border: 1px solid var(--gold-dim);
+      border: 1px solid var(--line-strong);
       background: #050505;
       box-shadow: var(--shadow);
     }
-
-    .carousel-track {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-
+    .carousel-track, .carousel-slide { width: 100%; height: 100%; position: relative; }
     .carousel-slide {
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
       background-size: cover;
       background-position: center;
       opacity: 0;
       transform: scale(1.02);
       transition: opacity 700ms ease, transform 900ms ease;
     }
-
     .carousel-slide::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0,0,0,0.08) 36%, rgba(0,0,0,0.5) 100%);
-      pointer-events: none;
+      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.06) 34%, rgba(0,0,0,.62));
     }
-
-    .carousel-slide.active {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .slide-home-1 {
-      background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787ef.png");
-    }
-
-    .slide-home-2 {
-      background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274fd42db4a9d19ae26ca4.png");
-    }
-
-    .slide-home-3 {
-      background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787f0.png");
-    }
-
-    .slide-home-4 {
-      background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e2db4a9d19ae266fd.png");
-    }
-
-    .slide-home-5 {
-      background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e93d93f4248962295.png");
-    }
-
+    .carousel-slide.active { opacity: 1; transform: scale(1); }
+    .slide-home-1 { background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787ef.png"); }
+    .slide-home-2 { background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274fd42db4a9d19ae26ca4.png"); }
+    .slide-home-3 { background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6ebb0883bec6a787f0.png"); }
+    .slide-home-4 { background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e2db4a9d19ae266fd.png"); }
+    .slide-home-5 { background-image: url("https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a274f6e93d93f4248962295.png"); }
     .carousel-caption {
       position: absolute;
       left: 18px;
       right: 18px;
       bottom: 18px;
       z-index: 3;
-      padding: 10px 14px;
-      background: rgba(0, 0, 0, 0.48);
-      border: 1px solid rgba(79, 179, 255, 0.28);
+      padding: 12px 16px;
+      background: rgba(0,0,0,.50);
+      border: 1px solid var(--line-strong);
       border-radius: 12px;
-      color: #ffffff;
-      font-size: 15px;
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
       font-weight: 700;
-      letter-spacing: 0.3px;
-      line-height: 1.35;
-      text-align: left;
-      max-width: calc(100% - 36px);
     }
-
     .carousel-btn {
       position: absolute;
       top: 50%;
@@ -573,29 +378,15 @@
       width: 38px;
       height: 38px;
       border-radius: 999px;
-      border: 1px solid rgba(79, 179, 255, 0.35);
-      background: rgba(0, 0, 0, 0.45);
-      color: #9bd8ff;
+      border: 1px solid var(--line-strong);
+      background: rgba(0,0,0,.45);
+      color: var(--gold-light);
       font-size: 22px;
-      line-height: 1;
       cursor: pointer;
       z-index: 4;
-      transition: background 200ms ease, transform 200ms ease;
     }
-
-    .carousel-btn:hover {
-      background: rgba(0, 0, 0, 0.75);
-      transform: translateY(-50%) scale(1.05);
-    }
-
-    .carousel-prev {
-      left: 14px;
-    }
-
-    .carousel-next {
-      right: 14px;
-    }
-
+    .carousel-prev { left: 14px; }
+    .carousel-next { right: 14px; }
     .carousel-dots {
       position: absolute;
       bottom: 14px;
@@ -606,604 +397,179 @@
       gap: 8px;
       z-index: 4;
     }
-
     .carousel-dot {
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.35);
-      border: 1px solid rgba(79, 179, 255, 0.4);
+      background: rgba(255,255,255,.35);
+      border: 1px solid var(--line-strong);
       cursor: pointer;
     }
+    .carousel-dot.active { background: var(--gold); }
 
-    .carousel-dot.active {
-      background: #4fb3ff;
-    }
-
-    .section,
-    .section-tight {
-      padding: 72px 34px;
-    }
-
-    .section-tight {
-      padding-top: 60px;
-      padding-bottom: 60px;
-    }
-
-    .s-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .s-eyebrow {
+    .section, .section-tight, .bottom-cta { padding: 84px 24px; }
+    .section-tight { padding-top: 70px; padding-bottom: 70px; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+    .section-title {
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 700;
       margin-bottom: 14px;
     }
+    .section-copy { color: var(--muted); font-size: 1.02rem; line-height: 1.85; font-weight: 300; }
 
-    .s-title {
-      font-family: "Merriweather", serif;
-      font-size: clamp(1.7rem, 3vw, 2.5rem);
-      font-weight: 900;
-      line-height: 1.25;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .teaser-section {
-      background: var(--black-soft);
-      border-top: 1px solid var(--black-border);
-      border-bottom: 1px solid var(--black-border);
-    }
-
-    .teaser-layout {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 42px;
-      align-items: start;
-    }
-
-    .teaser-intro {
-      font-size: 0.98rem;
-      line-height: 1.82;
-      color: var(--w70);
-      font-weight: 300;
-    }
-
-    .lock-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(79, 179, 255, 0.35);
-      background: rgba(79, 179, 255, 0.07);
-      color: var(--gold-light);
-      padding: 10px 14px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      margin-bottom: 16px;
-    }
-
-    .teaser-list {
-      list-style: none;
-      background: var(--black-card);
-      border: 1px solid var(--black-border);
-    }
-
-    .teaser-list li {
+    .teaser-section { background: var(--surface-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .teaser-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 46px; align-items: start; }
+    .topic-list { display: grid; gap: 1px; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--line); }
+    .topic-card {
       display: flex;
+      gap: 16px;
       align-items: flex-start;
-      gap: 14px;
-      padding: 15px 18px;
-      border-top: 1px solid var(--black-border);
-      color: var(--w85);
-      font-size: 0.9rem;
-      line-height: 1.55;
+      padding: 18px 20px;
+      background: var(--surface-3);
+      box-shadow: none;
     }
-
-    .teaser-list li:first-child {
-      border-top: none;
-    }
-
-    .teaser-icon {
-      width: 28px;
-      height: 28px;
-      min-width: 28px;
+    .topic-icon {
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(233, 193, 118, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.85rem;
     }
+    .topic-card strong { color: var(--ink); }
+    .topic-card span { color: var(--muted); font-size: 0.95rem; }
 
-    .expect-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--black-border);
-      border: 1px solid var(--black-border);
-    }
-
+    .expect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
     .expect-card {
-      background: var(--black-card);
-      padding: 28px 24px;
+      background: var(--surface-3);
+      border-radius: 18px;
+      padding: 30px 26px;
       border-top: 3px solid transparent;
-      transition: background 0.2s ease, border-top-color 0.2s ease;
+      transition: background 0.2s ease, border-top-color 0.2s ease, transform 0.2s ease;
     }
+    .expect-card:hover { background: var(--surface-4); border-top-color: var(--gold); transform: translateY(-3px); }
+    .ec-icon { color: var(--gold); margin-bottom: 16px; font-size: 28px; }
+    .ec-title { font-family: "Playfair Display", serif; font-size: 1.17rem; font-weight: 700; margin-bottom: 9px; line-height: 1.3; }
+    .ec-body { font-size: 0.95rem; color: var(--muted); line-height: 1.75; font-weight: 300; }
 
-    .expect-card:hover {
-      background: var(--black-hover);
-      border-top-color: var(--gold);
-    }
-
-    .ec-icon {
-      font-size: 1.4rem;
-      margin-bottom: 14px;
-    }
-
-    .ec-title {
-      font-family: "Merriweather", serif;
-      font-size: 0.97rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-
-    .ec-body {
-      font-size: 0.84rem;
-      color: var(--w70);
-      line-height: 1.75;
-      font-weight: 300;
-    }
-
-    .about-section {
-      background: var(--black-soft);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 52px;
-      align-items: start;
-    }
-
-    .about-photo-col {
-      text-align: center;
-    }
-
+    .about-section { background: var(--surface-2); border-top: 1px solid var(--line); }
+    .about-grid { display: grid; grid-template-columns: 260px 1fr; gap: 58px; align-items: center; }
     .about-photo {
-      width: 170px;
-      height: 170px;
+      width: 190px;
+      height: 190px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
-      border: 2px solid var(--gold);
-      box-shadow: 0 0 0 6px rgba(79, 179, 255, 0.07);
-      margin: 0 auto 16px;
-      display: block;
+      border: 3px solid rgba(233,193,118,.5);
+      box-shadow: 0 0 0 9px rgba(233,193,118,.06), var(--shadow);
+      margin: 0 auto 18px;
     }
-
-    .about-name {
-      font-family: "Merriweather", serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .about-role {
-      font-size: 0.68rem;
-      color: var(--w40);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    .about-nmls {
-      font-size: 0.68rem;
-      color: var(--gold);
-      font-weight: 700;
-      margin-top: 8px;
-    }
-
-    .about-body p {
-      font-size: 0.95rem;
-      color: var(--w70);
-      line-height: 1.9;
-      margin-bottom: 16px;
-      font-weight: 300;
-    }
-
-    .about-strip {
-      background: var(--black-card);
-      border: 1px solid var(--black-border);
-      border-left: 3px solid var(--gold);
-      padding: 12px 16px;
-      font-size: 0.76rem;
-      color: var(--w40);
-      line-height: 1.7;
-      margin-top: 8px;
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--black-border);
-      border: 1px solid var(--black-border);
-      margin-top: 48px;
-    }
-
-    .stat-cell {
-      background: var(--black-card);
-      padding: 24px 14px;
-      text-align: center;
-    }
-
-    .stat-n {
-      font-family: "Merriweather", serif;
-      font-size: 2rem;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 7px;
-    }
-
-    .stat-l {
-      font-size: 0.72rem;
-      color: var(--w40);
-      line-height: 1.5;
-    }
+    .about-name { font-family: "Playfair Display", serif; font-size: 1.32rem; font-weight: 700; text-align: center; }
+    .about-role { font-family: Manrope, sans-serif; color: var(--faint); font-size: 0.70rem; letter-spacing: 0.15em; text-transform: uppercase; text-align: center; margin-top: 4px; }
+    .about-nmls { color: var(--gold); font-weight: 800; font-size: 0.78rem; text-align: center; margin-top: 9px; }
+    .about-body p { color: var(--muted); line-height: 1.9; margin-bottom: 16px; font-weight: 300; }
+    .about-strip { border-left: 3px solid var(--gold); border-radius: 12px; padding: 14px 16px; color: var(--faint); font-size: 0.82rem; margin-top: 14px; }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 52px; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--line); }
+    .stat-cell { background: var(--surface-3); padding: 28px 16px; text-align: center; }
+    .stat-n { font-family: "Playfair Display", serif; color: var(--gold); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 9px; }
+    .stat-l { font-size: 0.76rem; color: var(--faint); line-height: 1.45; }
 
     .bottom-cta {
-      background: var(--black);
-      border-top: 1px solid var(--black-border);
-      text-align: center;
-      padding: 72px 34px;
       position: relative;
       overflow: hidden;
+      text-align: center;
+      background:
+        radial-gradient(circle at center top, rgba(233,193,118,.08), transparent 34%),
+        var(--surface);
+      border-top: 1px solid var(--line);
     }
-
     .bottom-cta::before {
       content: "";
       position: absolute;
-      top: 0;
       left: 0;
       right: 0;
+      top: 0;
       height: 3px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
-
-    .bottom-cta h2 {
-      font-family: "Merriweather", serif;
-      font-size: clamp(1.7rem, 3.5vw, 2.7rem);
-      font-weight: 900;
-      line-height: 1.25;
-      margin-bottom: 14px;
-    }
-
-    .bottom-cta p {
-      font-size: 0.96rem;
-      color: var(--w70);
-      max-width: 560px;
-      margin: 0 auto 30px;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    .cta-lg {
-      padding: 17px 46px;
-      font-size: 0.88rem;
-    }
-
-    .comp-footer {
-      background: #080808;
-      border-top: 1px solid var(--black-border);
-      padding: 40px 34px 28px;
-    }
-
-    .cf-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .cf-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--black-border);
-    }
-
-    .cf-brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .cf-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 1.5px solid var(--gold);
-      background: var(--black);
-      display: block;
-    }
-
-    .cf-brand-text strong {
-      display: block;
-      font-size: 0.84rem;
-      margin-bottom: 2px;
-    }
-
-    .cf-brand-text span {
-      font-size: 0.7rem;
-      color: var(--w40);
-    }
-
-    .brand-sep {
-      width: 1px;
-      height: 36px;
-      background: var(--black-border);
-      margin: 0 4px;
-    }
-
-    .citywide-footer-logo {
-      text-align: center;
-    }
-
-    .cw-main {
-      font-family: Georgia, serif;
-      font-size: 1rem;
-      letter-spacing: 4px;
-      color: rgba(255, 255, 255, 0.72);
-      text-transform: uppercase;
-    }
-
-    .cw-sub {
-      font-size: 0.55rem;
-      letter-spacing: 3px;
-      color: rgba(255, 255, 255, 0.4);
-      text-transform: uppercase;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 3px;
-      margin-top: 3px;
-    }
-
-    .ehl-block {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .ehl-logo {
-      width: 32px;
-      height: 32px;
-      border: 2px solid var(--w40);
-      border-radius: 2px;
-      display: flex;
+    .bottom-cta h2 { font-size: clamp(2.2rem, 4vw, 4.2rem); max-width: 900px; margin: 0 auto 20px; }
+    .bottom-cta p { max-width: 650px; margin: 0 auto 34px; color: var(--muted); font-size: 1.08rem; line-height: 1.8; }
+    .cta-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .cta-lg { padding: 18px 42px; font-size: 0.88rem; }
+    .secondary-cta {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .ehl-text {
-      font-size: 0.66rem;
-      color: var(--w40);
-      line-height: 1.5;
-    }
-
-    .footer-links {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--black-border);
-    }
-
-    .footer-links-title {
-      font-size: 0.66rem;
+      padding: 18px 42px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255,255,255,.04);
+      color: var(--ink);
+      font-family: Manrope, sans-serif;
+      font-size: 0.88rem;
       font-weight: 800;
-      letter-spacing: 2.5px;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
     }
+    .secondary-cta:hover { background: rgba(255,255,255,.08); }
 
-    .footer-link-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+    .footer {
+      background: #0b0f10;
+      border-top: 1px solid var(--line);
+      padding: 52px 24px 34px;
     }
+    .footer-inner { max-width: 1120px; margin: 0 auto; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+    .footer-brand { display: flex; align-items: center; gap: 14px; }
+    .footer-brand img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; object-position: center top; border: 1.5px solid var(--gold); }
+    .footer-brand strong { display: block; font-size: 0.9rem; }
+    .footer-brand span { color: var(--faint); font-size: 0.72rem; }
+    .citywide-footer-logo { text-align: center; }
+    .cw-main { font-family: Georgia, serif; font-size: 1.05rem; letter-spacing: 4px; color: rgba(255,255,255,.72); text-transform: uppercase; }
+    .cw-sub { font-size: .56rem; letter-spacing: 3px; color: rgba(255,255,255,.45); text-transform: uppercase; border-top: 1px solid rgba(255,255,255,.2); padding-top: 3px; margin-top: 3px; }
+    .ehl-block { display: flex; align-items: center; gap: 10px; color: var(--faint); font-size: 0.68rem; line-height: 1.5; }
+    .ehl-logo { width: 34px; height: 34px; border: 2px solid rgba(224,227,229,.45); border-radius: 3px; display: flex; align-items: center; justify-content: center; }
+    .footer-links { padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .footer-links-title { font-family: Manrope, sans-serif; color: var(--gold); font-weight: 800; font-size: 0.70rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-link-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .footer-link-card { border-radius: 12px; padding: 16px; transition: transform 0.2s ease, background 0.2s ease; }
+    .footer-link-card:hover { transform: translateY(-2px); background: rgba(233,193,118,.06); }
+    .footer-link-card span { display: block; color: var(--gold); font-family: Manrope, sans-serif; font-size: 0.64rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 5px; }
+    .footer-link-card strong { font-size: 0.9rem; }
+    .disclosures { padding-top: 26px; color: rgba(224,227,229,.48); font-size: 0.70rem; line-height: 1.9; }
+    .disclosures p { margin-bottom: 10px; }
+    .disclosures strong { color: rgba(224,227,229,.67); }
+    .disclosures a { color: var(--gold-light); text-decoration: underline; }
 
-    .footer-link-card {
-      display: block;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(79, 179, 255, 0.28);
-      padding: 15px 16px;
-      transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+    @media (max-width: 1040px) {
+      .hero-inner, .teaser-layout, .about-grid { grid-template-columns: 1fr; }
+      .hero-side { max-width: 620px; margin: 0 auto; width: 100%; }
     }
-
-    .footer-link-card:hover {
-      background: rgba(79, 179, 255, 0.07);
-      border-color: rgba(79, 179, 255, 0.55);
-      transform: translateY(-1px);
+    @media (max-width: 820px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .nav-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .portal-note, .topbar-call, .btn { width: 100%; justify-content: center; text-align: center; }
+      .topbar-call { border: 1px solid var(--line); border-radius: 999px; padding: 10px 14px; }
+      .quick-value, .expect-grid, .stats-row, .footer-link-grid { grid-template-columns: 1fr; }
+      .hero, .section, .section-tight, .bottom-cta { padding-left: 18px; padding-right: 18px; }
     }
-
-    .footer-link-card span {
-      display: block;
-      color: var(--gold);
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-
-    .footer-link-card strong {
-      display: block;
-      color: var(--white);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .cf-disclosures {
-      padding-top: 24px;
-      color: var(--w40);
-      font-size: 0.68rem;
-      line-height: 1.9;
-    }
-
-    .cf-disclosures p {
-      margin-bottom: 9px;
-    }
-
-    .cf-disclosures strong {
-      color: rgba(255, 255, 255, 0.56);
-      font-weight: 600;
-    }
-
-    .cf-disclosures a {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 980px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .hero-side {
-        max-width: 560px;
-        width: 100%;
-        margin: 0 auto;
-        order: -1;
-      }
-
-      .teaser-layout,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .expect-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats-row {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .topbar {
-        padding: 12px 18px;
-      }
-
-      .topbar-inner {
-        gap: 12px;
-      }
-
-      .topbar-right {
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .topbar-nmls {
-        display: none;
-      }
-
-      .topbar-call,
-      .topbar-cta {
-        padding: 10px 12px;
-        font-size: 0.68rem;
-      }
-
-      .hero,
-      .section,
-      .section-tight,
-      .bottom-cta,
-      .comp-footer {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      .quick-value {
-        grid-template-columns: 1fr;
-      }
-
-      .pillars {
-        flex-direction: column;
-      }
-
-      .pillar {
-        border-left: none;
-        border-top: 1px solid var(--black-border);
-      }
-
-      .pillar:first-child {
-        border-top: none;
-      }
-
-      .cf-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .brand-sep {
-        display: none;
-      }
-
-      .stats-row {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-link-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .topbar-inner {
-        align-items: flex-start;
-      }
-
-      .topbar-text span {
-        display: none;
-      }
-
-      .topbar-call,
-      .topbar-cta {
-        padding: 9px 10px;
-        font-size: 0.64rem;
-        letter-spacing: 0.8px;
-      }
-
-      .reg-head {
-        padding: 18px 18px 12px;
-      }
-
-      .reg-body {
-        padding: 14px;
-      }
-
-      .carousel-caption {
-        font-size: 14px;
-      }
-
-      .cta-lg {
-        width: 100%;
-      }
+    @media (max-width: 540px) {
+      .nav-actions { grid-template-columns: 1fr; }
+      .brand span { display: none; }
+      .hero { padding-top: 52px; }
+      .reg-head { padding: 22px 20px 16px; }
+      .reg-body { padding: 18px; }
+      .carousel-caption { font-size: 0.96rem; }
+      .cta-lg, .secondary-cta { width: 100%; }
     }
   </style>
-
 </head>
 
 <body>
-
   <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=879134155809312&ev=PageView&noscript=1"
-    />
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=879134155809312&ev=PageView&noscript=1" />
   </noscript>
 
   <div class="comp-banner">
@@ -1214,444 +580,215 @@
 
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="topbar-left">
-        <img
-          class="bw-mark-img"
-          src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg"
-          alt="Scott Smith"
-        />
-        <div class="topbar-text">
+      <a class="brand" href="#top" aria-label="Buy With Confidence Webinar home">
+        <img src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg" alt="Scott Smith" />
+        <div>
           <strong>Buy With Confidence Webinar</strong>
           <span>Hosted by Scott Smith · Citywide Home Mortgage</span>
         </div>
-      </div>
+      </a>
 
-  <div class="topbar-right">
-    <a href="tel:+19705280874" class="topbar-call">Call Now</a>
-
-    <a
-      href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT"
-      class="topbar-cta"
-      target="_blank"
-      rel="noopener"
-    >
-      Reserve My Spot
-    </a>
-
-    <div class="topbar-nmls">
-      Scott Smith &nbsp;·&nbsp; NMLS <span class="gold-text">#2244351</span><br />
-      Equal Housing Lender
+      <nav class="nav-actions" aria-label="Top navigation">
+        <a class="portal-note" href="https://hub.smithapprovesme.com" target="_blank" rel="noopener">To view webinar, login</a>
+        <a class="topbar-call" href="tel:+19705280874">Call Now</a>
+        <a class="btn" href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT" target="_blank" rel="noopener">Reserve My Spot</a>
+      </nav>
     </div>
-  </div>
-</div>
-
   </header>
 
-  <section class="hero" id="top">
-    <div class="hero-line"></div>
-
-<div class="hero-inner">
-  <div class="hero-copy">
-    <div class="eyebrow">Free Educational Webinar</div>
-
-    <h1>First-Time Homebuyer Webinar: <em>Buy With Confidence.</em></h1>
-
-    <div class="hero-rule"></div>
-
-    <p class="hero-sub">
-      Buying your first home is easier to navigate when you understand the key money points, negotiation opportunities, protection steps, and team roles before pressure shows up. This free webinar gives you a clear, practical framework so you can ask better questions, understand your options, and move forward with more confidence whenever you are ready.
-    </p>
-
-    <div class="quick-value">
-      <div class="value-item">
-        <strong>Know what cash may actually be needed</strong>
-        <span>Understand down payment and closing cost questions before you rule yourself out.</span>
-      </div>
-
-      <div class="value-item">
-        <strong>Know what may be negotiable</strong>
-        <span>Learn where closing costs, terms, and payment strategies may create options.</span>
-      </div>
-
-      <div class="value-item">
-        <strong>Know where leverage lives</strong>
-        <span>See why the smartest opportunity is not always the home getting the most attention.</span>
-      </div>
-
-      <div class="value-item">
-        <strong>Protect yourself with better information</strong>
-        <span>Understand how inspections and the right team can help reduce risk before closing.</span>
-      </div>
-    </div>
-
-    <div class="presenter-strip">
-      <img
-        class="presenter-avatar"
-        src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg"
-        alt="Scott Smith"
-      />
-      <div>
-        <div class="p-name">Scott Smith &nbsp;·&nbsp; Mortgage Loan Originator</div>
-        <div class="p-creds">
-        Citywide Home Mortgage &nbsp;·&nbsp; NMLS <span class="nmls-tag">#2244351</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="p-top">Know</div>
-        <div class="p-bot">More.</div>
-      </div>
-      <div class="pillar">
-        <div class="p-top">Keep</div>
-        <div class="p-bot">More.</div>
-      </div>
-      <div class="pillar">
-        <div class="p-top">Close With</div>
-        <div class="p-bot">Confidence.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-side">
-    <aside class="registration-card" id="register">
-      <div class="reg-head">
-        <div class="reg-tag">Reserve Your Spot — Free Webinar</div>
-        <div class="reg-title">5 Things Worth Knowing Before You Buy</div>
-        <p class="reg-support">
-          Learn the 5 things confident buyers understand before they start making offers.
-        </p>
-      </div>
-
-      <div class="reg-body">
-        <a
-          href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT"
-          class="reg-button"
-          target="_blank"
-          rel="noopener"
-        >
-          Reserve My Spot
-        </a>
-
-        <ul class="reg-steps">
-          <li>
-            <span class="step-num">1</span>
-            <span>Click the button and choose the webinar time.</span>
-          </li>
-          <li>
-            <span class="step-num">2</span>
-            <span>Complete the quick registration details.</span>
-          </li>
-          <li>
-            <span class="step-num">3</span>
-            <span>Add the webinar to your calendar so you do not miss it.</span>
-          </li>
-        </ul>
-
-        <div class="reg-microcopy">
-          Takes less than a minute. Choose the webinar time and complete your registration on the next page.
-          <br /><br />
-          Registration is for educational content only and is not a loan application, loan approval, pre-approval, or commitment to lend.
-        </div>
-      </div>
-    </aside>
-
-    <div class="home-carousel">
-      <div class="carousel-track">
-        <div class="carousel-slide slide-home-1 active">
-          <div class="carousel-caption">First-Home Potential</div>
-        </div>
-
-        <div class="carousel-slide slide-home-2">
-          <div class="carousel-caption">The Possibility of Home</div>
-        </div>
-
-        <div class="carousel-slide slide-home-3">
-          <div class="carousel-caption">Picture What’s Possible</div>
-        </div>
-
-        <div class="carousel-slide slide-home-4">
-          <div class="carousel-caption">Where Your Story Starts</div>
-        </div>
-
-        <div class="carousel-slide slide-home-5">
-          <div class="carousel-caption">A Home Within Reach</div>
-        </div>
-      </div>
-
-      <button class="carousel-btn carousel-prev" type="button" aria-label="Previous slide">&#10094;</button>
-      <button class="carousel-btn carousel-next" type="button" aria-label="Next slide">&#10095;</button>
-
-      <div class="carousel-dots">
-        <span class="carousel-dot active" aria-label="Slide 1"></span>
-        <span class="carousel-dot" aria-label="Slide 2"></span>
-        <span class="carousel-dot" aria-label="Slide 3"></span>
-        <span class="carousel-dot" aria-label="Slide 4"></span>
-        <span class="carousel-dot" aria-label="Slide 5"></span>
-      </div>
-    </div>
-  </div>
-</div>
-
-  </section>
-
-  <section class="section-tight teaser-section">
-    <div class="s-inner">
-      <div class="teaser-layout">
-        <div>
-          <div class="s-eyebrow">What This Webinar Covers</div>
-          <h2 class="s-title">5 things worth knowing before you buy.</h2>
-          <div class="s-rule"></div>
-          <p class="teaser-intro">
-            This webinar is designed to help first-time buyers replace guesswork with clarity. You will learn the key places where preparation can help you better understand costs, leverage, negotiation opportunities, and buyer protections.
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Free Educational Webinar</div>
+          <h1>First-Time Homebuyer Webinar: <em>Buy With Confidence.</em></h1>
+          <div class="hero-rule"></div>
+          <p class="hero-sub">
+            Buying your first home is easier to navigate when you understand the key money points, negotiation opportunities, protection steps, and team roles before pressure shows up. This free webinar gives you a clear, practical framework so you can ask better questions, understand your options, and move forward with more confidence whenever you are ready.
           </p>
-        </div>
 
-        <div>
-          <div class="lock-badge">Topics covered on the webinar</div>
-
-          <ul class="teaser-list">
-            <li>
-              <div class="teaser-icon">💰</div>
-              <span><strong>Know what cash you may actually need</strong> — including down payment and closing cost considerations.</span>
-            </li>
-            <li>
-              <div class="teaser-icon">🤝</div>
-              <span><strong>Build the right team early</strong> so you can ask better questions before pressure shows up.</span>
-            </li>
-            <li>
-              <div class="teaser-icon">📋</div>
-              <span><strong>Know what’s negotiable</strong> including seller credits, rate buydowns, and contract terms.</span>
-            </li>
-            <li>
-              <div class="teaser-icon">🏠</div>
-              <span><strong>Know where buyer leverage lives</strong> and why less competition may create better opportunities.</span>
-            </li>
-            <li>
-              <div class="teaser-icon">🔍</div>
-              <span><strong>Use inspections to protect yourself</strong> by turning information into options before you fully commit.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background: var(--black);">
-    <div class="s-inner">
-      <div class="s-eyebrow">What You’ll Walk Away With</div>
-      <h2 class="s-title">A clearer path to <em>buying with confidence.</em></h2>
-      <div class="s-rule"></div>
-
-      <div class="expect-grid">
-        <div class="expect-card">
-          <div class="ec-icon">🗺️</div>
-          <div class="ec-title">A better understanding of your options</div>
-          <p class="ec-body">
-            Learn why the first move is not ruling yourself out before you understand what may be available based on your numbers and timeline.
-          </p>
-        </div>
-
-        <div class="expect-card">
-          <div class="ec-icon">🧠</div>
-          <div class="ec-title">Smarter questions to ask early</div>
-          <p class="ec-body">
-            Walk away knowing what to ask about cash needed, negotiable items, inspections, and team roles before you are under contract.
-          </p>
-        </div>
-
-        <div class="expect-card">
-          <div class="ec-icon">🛡️</div>
-          <div class="ec-title">More clarity before you commit</div>
-          <p class="ec-body">
-            Understand how preparation, patience, and the right information can help you feel more confident about each step.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section about-section">
-    <div class="s-inner">
-      <div class="about-grid">
-        <div class="about-photo-col">
-          <img
-            class="about-photo"
-            src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg"
-            alt="Scott Smith"
-          />
-          <div class="about-name">Scott Smith</div>
-          <div class="about-role">Mortgage Loan Originator</div>
-          <div class="about-nmls">NMLS #2244351</div>
-        </div>
-
-    <div class="about-body">
-      <div class="s-eyebrow">Your Host</div>
-      <h2 class="s-title" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">
-        Hosted by Scott Smith<br />
-        with <em>Citywide Home Mortgage.</em>
-      </h2>
-      <div class="s-rule"></div>
-
-      <p>
-        Many first-time buyers do not need more pressure — they need a clearer picture of how the process works and what questions to ask before they move forward.
-      </p>
-
-      <p>
-        This webinar is designed to help close that education gap with practical, plain-English guidance on cash needed, negotiation opportunities, buyer leverage, inspections, and building the right team early.
-      </p>
-
-      <p>
-        Scott Smith is a mortgage loan originator with Citywide Home Mortgage, NMLS #2611. Loan availability, licensing, program eligibility, and loan originator availability may vary by state.
-      </p>
-
-      <p>
-        After the webinar, you may choose to schedule a free one-on-one planning conversation. There is no obligation to apply.
-      </p>
-
-      <div class="about-strip">
-        <strong>Scott Smith · NMLS #2244351</strong> &nbsp;|&nbsp;
-        Citywide Home Mortgage NMLS #2611 &nbsp;|&nbsp;
-        Equal Housing Lender
-      </div>
-    </div>
-  </div>
-
-  <div class="stats-row">
-    <div class="stat-cell">
-      <div class="stat-n"><em>5</em></div>
-      <div class="stat-l">things worth knowing before you buy</div>
-    </div>
-
-    <div class="stat-cell">
-      <div class="stat-n"><em>0</em></div>
-      <div class="stat-l">obligation to apply or buy now</div>
-    </div>
-
-    <div class="stat-cell">
-      <div class="stat-n"><em>1</em></div>
-      <div class="stat-l">simple framework for better questions</div>
-    </div>
-
-    <div class="stat-cell">
-      <div class="stat-n"><em>Free</em></div>
-      <div class="stat-l">educational webinar registration</div>
-    </div>
-  </div>
-</div>
-
-  </section>
-
-  <section class="bottom-cta">
-    <h2>Know More. Keep More. <em>Close With Confidence.</em></h2>
-    <p>
-      Reserve your spot for the free webinar and learn the 5 things worth knowing before you buy — so you can know more, keep more, and close with confidence.
-    </p>
-    <a
-      href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT"
-      class="cta-lg"
-      target="_blank"
-      rel="noopener"
-    >
-      Reserve My Spot
-    </a>
-  </section>
-
-  <footer class="comp-footer">
-    <div class="cf-inner">
-      <div class="cf-top">
-        <div class="cf-brand">
-          <img
-            class="cf-avatar"
-            src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg"
-            alt="Scott Smith"
-          />
-          <div class="cf-brand-text">
-            <strong>Scott Smith</strong>
-            <span>NMLS #2244351 · Citywide Home Mortgage NMLS #2611</span>
+          <div class="quick-value">
+            <div class="value-item">
+              <strong>Know what cash may actually be needed</strong>
+              <span>Understand down payment and closing cost questions before you rule yourself out.</span>
+            </div>
+            <div class="value-item">
+              <strong>Know what may be negotiable</strong>
+              <span>Learn where closing costs, terms, and payment strategies may create options.</span>
+            </div>
+            <div class="value-item">
+              <strong>Know where leverage lives</strong>
+              <span>See why the smartest opportunity is not always the home getting the most attention.</span>
+            </div>
+            <div class="value-item">
+              <strong>Protect yourself with better information</strong>
+              <span>Understand how inspections and the right team can help reduce risk before closing.</span>
+            </div>
           </div>
         </div>
 
-    <div class="brand-sep"></div>
+        <div class="hero-side">
+          <aside class="registration-card" id="register">
+            <div class="reg-head">
+              <div class="reg-tag">Reserve Your Spot — Free Webinar</div>
+              <div class="reg-title">5 Things Worth Knowing Before You Buy</div>
+              <p class="reg-support">Learn the 5 things confident buyers understand before they start making offers.</p>
+            </div>
+            <div class="reg-body">
+              <a href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT" class="reg-button" target="_blank" rel="noopener">Reserve My Spot</a>
+              <ul class="reg-steps">
+                <li><span class="step-num">1</span><span>Click the button and choose the webinar time.</span></li>
+                <li><span class="step-num">2</span><span>Complete the quick registration details.</span></li>
+                <li><span class="step-num">3</span><span>Add the webinar to your calendar so you do not miss it.</span></li>
+              </ul>
+              <div class="reg-microcopy">
+                Takes less than a minute. Choose the webinar time and complete your registration on the next page.
+                <br /><br />Registration is for educational content only and is not a loan application, loan approval, pre-approval, or commitment to lend.
+              </div>
+            </div>
+          </aside>
 
-    <div class="citywide-footer-logo">
-      <div class="cw-main">Citywide</div>
-      <div class="cw-sub">Home Mortgage</div>
-    </div>
+          <div class="home-carousel" aria-label="Home image carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide slide-home-1 active"><div class="carousel-caption">First-Home Potential</div></div>
+              <div class="carousel-slide slide-home-2"><div class="carousel-caption">The Possibility of Home</div></div>
+              <div class="carousel-slide slide-home-3"><div class="carousel-caption">Picture What’s Possible</div></div>
+              <div class="carousel-slide slide-home-4"><div class="carousel-caption">Where Your Story Starts</div></div>
+              <div class="carousel-slide slide-home-5"><div class="carousel-caption">A Home Within Reach</div></div>
+            </div>
+            <button class="carousel-btn carousel-prev" type="button" aria-label="Previous slide">&#10094;</button>
+            <button class="carousel-btn carousel-next" type="button" aria-label="Next slide">&#10095;</button>
+            <div class="carousel-dots" aria-label="Carousel navigation">
+              <span class="carousel-dot active" aria-label="Slide 1"></span>
+              <span class="carousel-dot" aria-label="Slide 2"></span>
+              <span class="carousel-dot" aria-label="Slide 3"></span>
+              <span class="carousel-dot" aria-label="Slide 4"></span>
+              <span class="carousel-dot" aria-label="Slide 5"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="ehl-block">
-      <div class="ehl-logo">🏠</div>
-      <div class="ehl-text">
-        <strong style="color: rgba(255,255,255,0.55);">Equal Housing Lender</strong><br />
-        We do business in accordance with<br />
-        the Fair Housing Act and Equal Credit Opportunity Act.
+    <section class="section-tight teaser-section">
+      <div class="section-inner">
+        <div class="teaser-layout">
+          <div>
+            <div class="section-eyebrow">What This Webinar Covers</div>
+            <h2 class="section-title">5 things worth knowing before you buy.</h2>
+            <div class="section-rule"></div>
+            <p class="section-copy">
+              This webinar is designed to help first-time buyers replace guesswork with clarity. You will learn the key places where preparation can help you better understand costs, leverage, negotiation opportunities, and buyer protections.
+            </p>
+          </div>
+
+          <div class="topic-list">
+            <div class="topic-card"><div class="topic-icon">💰</div><span><strong>Know what cash you may actually need</strong> — including down payment and closing cost considerations.</span></div>
+            <div class="topic-card"><div class="topic-icon">🤝</div><span><strong>Build the right team early</strong> so you can ask better questions before pressure shows up.</span></div>
+            <div class="topic-card"><div class="topic-icon">📋</div><span><strong>Know what’s negotiable</strong> including seller credits, rate buydowns, and contract terms.</span></div>
+            <div class="topic-card"><div class="topic-icon">🏠</div><span><strong>Know where buyer leverage lives</strong> and why less competition may create better opportunities.</span></div>
+            <div class="topic-card"><div class="topic-icon">🔍</div><span><strong>Use inspections to protect yourself</strong> by turning information into options before you fully commit.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-eyebrow">What You’ll Walk Away With</div>
+        <h2 class="section-title">A clearer path to <em>buying with confidence.</em></h2>
+        <div class="section-rule"></div>
+        <div class="expect-grid">
+          <div class="expect-card">
+            <div class="ec-icon"><span class="material-symbols-outlined">map</span></div>
+            <div class="ec-title">A better understanding of your options</div>
+            <p class="ec-body">Learn why the first move is not ruling yourself out before you understand what may be available based on your numbers and timeline.</p>
+          </div>
+          <div class="expect-card">
+            <div class="ec-icon"><span class="material-symbols-outlined">psychology</span></div>
+            <div class="ec-title">Smarter questions to ask early</div>
+            <p class="ec-body">Walk away knowing what to ask about cash needed, negotiable items, inspections, and team roles before you are under contract.</p>
+          </div>
+          <div class="expect-card">
+            <div class="ec-icon"><span class="material-symbols-outlined">shield</span></div>
+            <div class="ec-title">More clarity before you commit</div>
+            <p class="ec-body">Understand how preparation, patience, and the right information can help you feel more confident about each step.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div>
+            <img class="about-photo" src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg" alt="Scott Smith" />
+            <div class="about-name">Scott Smith</div>
+            <div class="about-role">Mortgage Loan Originator</div>
+            <div class="about-nmls">NMLS #2244351</div>
+          </div>
+          <div class="about-body">
+            <div class="section-eyebrow">Your Host</div>
+            <h2 class="section-title">Hosted by Scott Smith with <em>Citywide Home Mortgage.</em></h2>
+            <div class="section-rule"></div>
+            <p>Many first-time buyers do not need more pressure — they need a clearer picture of how the process works and what questions to ask before they move forward.</p>
+            <p>This webinar is designed to help close that education gap with practical, plain-English guidance on cash needed, negotiation opportunities, buyer leverage, inspections, and building the right team early.</p>
+            <p>Scott Smith is a mortgage loan originator with Citywide Home Mortgage, NMLS #2611. Loan availability, licensing, program eligibility, and loan originator availability may vary by state.</p>
+            <p>After the webinar, you may choose to schedule a free one-on-one planning conversation. There is no obligation to apply.</p>
+            <div class="about-strip"><strong>Scott Smith · NMLS #2244351</strong> &nbsp;|&nbsp; Citywide Home Mortgage NMLS #2611 &nbsp;|&nbsp; Equal Housing Lender</div>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-cell"><div class="stat-n">5</div><div class="stat-l">things worth knowing before you buy</div></div>
+          <div class="stat-cell"><div class="stat-n">0</div><div class="stat-l">obligation to apply or buy now</div></div>
+          <div class="stat-cell"><div class="stat-n">1</div><div class="stat-l">simple framework for better questions</div></div>
+          <div class="stat-cell"><div class="stat-n">Free</div><div class="stat-l">educational webinar registration</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-cta">
+      <h2>Know More. Keep More. <em>Close With Confidence.</em></h2>
+      <p>Reserve your spot for the free webinar and learn the 5 things worth knowing before you buy — so you can know more, keep more, and close with confidence.</p>
+      <div class="cta-row">
+        <a href="https://api.leadconnectorhq.com/widget/booking/TricdGiaW4lxrwUW0FMT" class="cta-lg" target="_blank" rel="noopener">Reserve My Spot</a>
+        <a href="https://hub.smithapprovesme.com" class="secondary-cta" target="_blank" rel="noopener">To view webinar, login</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="https://assets.cdn.filesafe.space/ERorIDfOTkbtiJ9fX0lr/media/6a2763312db4a9d19ae352a5.jpeg" alt="Scott Smith" />
+          <div><strong>Scott Smith</strong><span>NMLS #2244351 · Citywide Home Mortgage NMLS #2611</span></div>
+        </div>
+        <div class="citywide-footer-logo"><div class="cw-main">Citywide</div><div class="cw-sub">Home Mortgage</div></div>
+        <div class="ehl-block"><div class="ehl-logo">🏠</div><div><strong>Equal Housing Lender</strong><br />We do business in accordance with the Fair Housing Act and Equal Credit Opportunity Act.</div></div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-links-title">Helpful Links</div>
+        <div class="footer-link-grid">
+          <a href="https://scottsellstherockies.com" class="footer-link-card" target="_blank" rel="noopener"><span>Real Estate</span><strong>Search Colorado Homes</strong></a>
+          <a href="https://www.citywidehm.com/loan-officers/scott-smith-2244351" class="footer-link-card" target="_blank" rel="noopener"><span>Mortgage</span><strong>Learn More About Citywide Home Mortgage</strong></a>
+          <a href="https://hub.smithapprovesme.com" class="footer-link-card" target="_blank" rel="noopener"><span>Member Portal</span><strong>To view webinar, login</strong></a>
+        </div>
+      </div>
+
+      <div class="disclosures">
+        <p><strong>Educational Content Disclosure:</strong> This webinar is provided for educational purposes only. The information presented does not constitute financial, legal, real estate, tax, or mortgage advice. Attendance does not constitute a loan application, pre-approval, loan approval, or commitment to lend.</p>
+        <p><strong>Licensing:</strong> Scott Smith, NMLS #2244351, is a mortgage loan originator with Citywide Home Mortgage, NMLS #2611. For licensing information, visit <a href="https://nmlsconsumeraccess.org" target="_blank" rel="noopener">nmlsconsumeraccess.org</a>. Licensing, loan availability, and loan originator availability may vary by state.</p>
+        <p><strong>Pre-Approval Disclosure:</strong> Any pre-approval is subject to review of credit, income, assets, property, program eligibility, and underwriting requirements. A pre-approval is not a final loan approval or commitment to lend.</p>
+        <p><strong>Real Estate Disclosure:</strong> Real estate services are offered through HomeSmart. Mortgage services are offered through Citywide Home Mortgage, NMLS #2611. Real estate brokerage services and mortgage lending services are separate services and are subject to their respective licensing and compliance requirements.</p>
+        <p><strong>Down Payment Assistance:</strong> Down payment assistance programs, if discussed, are subject to eligibility requirements including but not limited to income limits, property location, credit score, loan type, and program availability. Not all borrowers will qualify. Programs may change or be discontinued at any time.</p>
+        <p><strong>Results Disclaimer:</strong> Any scenarios or examples described are for educational purposes only. Individual results vary based on creditworthiness, property type, loan amount, market conditions, program eligibility, and other factors. Past results do not guarantee future outcomes.</p>
+        <p><strong>Fair Lending:</strong> We are committed to the Fair Housing Act and Equal Credit Opportunity Act. We do not discriminate on the basis of race, color, religion, sex, national origin, disability, familial status, age, or any other characteristic protected by law.</p>
+        <p><strong>Privacy:</strong> This page uses tracking technology, including Meta Pixel, to measure advertising performance and website activity. Information submitted through registration is subject to the applicable privacy policy.</p>
       </div>
     </div>
-  </div>
-
-  <div class="footer-links">
-    <div class="footer-links-title">Helpful Links</div>
-
-    <div class="footer-link-grid">
-      <a
-        href="https://scottsellstherockies.com"
-        class="footer-link-card"
-        target="_blank"
-        rel="noopener"
-      >
-        <span>Real Estate</span>
-        <strong>Search Colorado Homes</strong>
-      </a>
-
-      <a
-        href="https://www.citywidehm.com/loan-officers/scott-smith-2244351"
-        class="footer-link-card"
-        target="_blank"
-        rel="noopener"
-      >
-        <span>Mortgage</span>
-        <strong>Learn More About Citywide Home Mortgage</strong>
-      </a>
-    </div>
-  </div>
-
-  <div class="cf-disclosures">
-    <p>
-      <strong>Educational Content Disclosure:</strong> This webinar is provided for educational purposes only. The information presented does not constitute financial, legal, real estate, tax, or mortgage advice. Attendance does not constitute a loan application, pre-approval, loan approval, or commitment to lend.
-    </p>
-
-    <p>
-      <strong>Licensing:</strong> Scott Smith, NMLS #2244351, is a mortgage loan originator with Citywide Home Mortgage, NMLS #2611. For licensing information, visit
-      <a href="https://nmlsconsumeraccess.org" target="_blank" rel="noopener">nmlsconsumeraccess.org</a>. Licensing, loan availability, and loan originator availability may vary by state.
-    </p>
-
-    <p>
-      <strong>Pre-Approval Disclosure:</strong> Any pre-approval is subject to review of credit, income, assets, property, program eligibility, and underwriting requirements. A pre-approval is not a final loan approval or commitment to lend.
-    </p>
-
-    <p>
-      <strong>Real Estate Disclosure:</strong> Real estate services are offered through HomeSmart. Mortgage services are offered through Citywide Home Mortgage, NMLS #2611. Real estate brokerage services and mortgage lending services are separate services and are subject to their respective licensing and compliance requirements.
-    </p>
-
-    <p>
-      <strong>Down Payment Assistance:</strong> Down payment assistance programs, if discussed, are subject to eligibility requirements including but not limited to income limits, property location, credit score, loan type, and program availability. Not all borrowers will qualify. Programs may change or be discontinued at any time.
-    </p>
-
-    <p>
-      <strong>Results Disclaimer:</strong> Any scenarios or examples described are for educational purposes only. Individual results vary based on creditworthiness, property type, loan amount, market conditions, program eligibility, and other factors. Past results do not guarantee future outcomes.
-    </p>
-
-    <p>
-      <strong>Fair Lending:</strong> We are committed to the Fair Housing Act and Equal Credit Opportunity Act. We do not discriminate on the basis of race, color, religion, sex, national origin, disability, familial status, age, or any other characteristic protected by law.
-    </p>
-
-    <p>
-      <strong>Privacy:</strong> This page uses tracking technology, including Meta Pixel, to measure advertising performance and website activity. Information submitted through registration is subject to the applicable privacy policy.
-    </p>
-  </div>
-</div>
-
   </footer>
 
   <script>
@@ -1660,59 +797,25 @@
       const dots = document.querySelectorAll(".carousel-dot");
       const prev = document.querySelector(".carousel-prev");
       const next = document.querySelector(".carousel-next");
-
       if (!slides.length || !dots.length || !prev || !next) return;
-
       let current = 0;
       let timer;
-
       function showSlide(index) {
         slides[current].classList.remove("active");
         dots[current].classList.remove("active");
-
         current = (index + slides.length) % slides.length;
-
         slides[current].classList.add("active");
         dots[current].classList.add("active");
       }
-
-      function nextSlide() {
-        showSlide(current + 1);
-      }
-
-      function prevSlide() {
-        showSlide(current - 1);
-      }
-
-      function startAutoPlay() {
-        timer = setInterval(nextSlide, 4500);
-      }
-
-      function resetAutoPlay() {
-        clearInterval(timer);
-        startAutoPlay();
-      }
-
-      next.addEventListener("click", function () {
-        nextSlide();
-        resetAutoPlay();
-      });
-
-      prev.addEventListener("click", function () {
-        prevSlide();
-        resetAutoPlay();
-      });
-
-      dots.forEach(function (dot, index) {
-        dot.addEventListener("click", function () {
-          showSlide(index);
-          resetAutoPlay();
-        });
-      });
-
+      function nextSlide() { showSlide(current + 1); }
+      function prevSlide() { showSlide(current - 1); }
+      function startAutoPlay() { timer = setInterval(nextSlide, 4500); }
+      function resetAutoPlay() { clearInterval(timer); startAutoPlay(); }
+      next.addEventListener("click", function () { nextSlide(); resetAutoPlay(); });
+      prev.addEventListener("click", function () { prevSlide(); resetAutoPlay(); });
+      dots.forEach(function (dot, index) { dot.addEventListener("click", function () { showSlide(index); resetAutoPlay(); }); });
       startAutoPlay();
     })();
   </script>
-
 </body>
 </html>
