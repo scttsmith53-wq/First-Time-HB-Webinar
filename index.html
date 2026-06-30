@@ -870,10 +870,13 @@
               body: JSON.stringify(payload)
             });
             if (!res.ok) { throw new Error('Registration failed'); }
+            var data = await res.json().catch(function () { return {}; });
             if (window.fbq) { fbq('track', 'Lead', { content_name: 'First-Time Homebuyer Webinar' }); }
             document.getElementById('formView').style.display = 'none';
             document.getElementById('successView').style.display = 'block';
-            setTimeout(function () { window.location.href = PORTAL_WEBINAR + '?name=' + encodeURIComponent(first); }, 2400);
+            // Redirect via the magic link so they land logged in; fall back to the portal URL.
+            var go = (data && data.magic_link) ? data.magic_link : (PORTAL_WEBINAR + '?name=' + encodeURIComponent(first));
+            setTimeout(function () { window.location.href = go; }, 1600);
           } catch (e) {
             btn.disabled = false; btn.textContent = 'Reserve My Spot';
             showErr('Something went wrong. Please try again or call Scott directly.');
