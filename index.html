@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FYJ9YLVZD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6FYJ9YLVZD');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Webinar | Buy With Confidence | Scott Smith | Citywide Home Mortgage</title>
@@ -884,6 +887,7 @@
             });
             if (!res.ok) { throw new Error('Registration failed'); }
             if (window.fbq) { fbq('track', 'Lead', { content_name: 'First-Time Homebuyer Webinar' }); }
+            if (window.gtag) { gtag('event', 'generate_lead', { method: 'webinar_form' }); }
             document.getElementById('formView').style.display = 'none';
             document.getElementById('successView').style.display = 'block';
             // Pass the registrant's info so the portal auto-logs them in.
