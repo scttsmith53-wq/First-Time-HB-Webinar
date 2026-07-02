@@ -879,8 +879,16 @@
             if (window.fbq) { fbq('track', 'Lead', { content_name: 'First-Time Homebuyer Webinar' }); }
             document.getElementById('formView').style.display = 'none';
             document.getElementById('successView').style.display = 'block';
-            // Plain portal redirect — matches the DPA page, which auto-logs in correctly.
-            setTimeout(function () { window.location.href = PORTAL_WEBINAR + '?name=' + encodeURIComponent(first); }, 1800);
+            // Pass the registrant's info so the portal auto-logs them in.
+            // The portal's middleware + initializeUserFromUrl require ?email= (not ?name=).
+            setTimeout(function () {
+              window.location.href = PORTAL_WEBINAR
+                + '?email=' + encodeURIComponent(email)
+                + '&firstName=' + encodeURIComponent(first)
+                + '&lastName=' + encodeURIComponent(last)
+                + '&phone=' + encodeURIComponent(phone)
+                + '&source=webinar';
+            }, 1800);
           } catch (e) {
             btn.disabled = false; btn.textContent = 'Reserve My Spot';
             showErr('Something went wrong. Please try again or call Scott directly.');
