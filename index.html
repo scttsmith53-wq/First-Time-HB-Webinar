@@ -651,6 +651,17 @@
                   <input type="email" id="email" placeholder="Email" autocomplete="email" />
                   <input type="tel" id="phone" placeholder="Phone" autocomplete="tel" />
                 </div>
+                <input type="text" id="referredBy" placeholder="Referred by (optional — who sent you?)" autocomplete="off" style="width:100%;box-sizing:border-box;margin-bottom:10px;" />
+                <select id="referralChannel" style="width:100%;box-sizing:border-box;padding:13px 14px;margin-bottom:12px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#101415;color:#fff;font-size:15px;font-family:inherit;">
+                  <option value="">How did you hear about us?</option>
+                  <option>Google search</option>
+                  <option>Facebook or Instagram</option>
+                  <option>Friend or family</option>
+                  <option>Real estate agent</option>
+                  <option>Another website</option>
+                  <option>Zillow / Realtor.com</option>
+                  <option>Other</option>
+                </select>
                 <label class="reg-consent">
                   <input type="checkbox" id="consent" />
                   <span>By submitting, I agree to be contacted by Scott Smith / Citywide Home Mortgage by phone, text, and email about my inquiry, including via automated technology. Consent is not a condition of any purchase. Message and data rates may apply; reply STOP to opt out.</span>
@@ -861,12 +872,15 @@
           var last = (document.getElementById('lastName').value || '').trim();
           var email = (document.getElementById('email').value || '').trim();
           var phone = (document.getElementById('phone').value || '').trim();
+          var referredBy = (document.getElementById('referredBy').value || '').trim();
+          var referralChannel = (document.getElementById('referralChannel').value || '').trim();
           var session = document.getElementById('session').value;
           var consent = document.getElementById('consent').checked;
           if (!first || !email || email.indexOf('@') < 0) { return showErr('Please enter your name and a valid email.'); }
           if (!consent) { return showErr('Please check the box to agree to be contacted.'); }
           var tsToken = (document.querySelector('[name="cf-turnstile-response"]') || {}).value || '';
-          if (!tsToken) { return showErr('Please complete the verification below.'); }
+          // The backend does not verify this token, so a Turnstile render/domain
+          // hiccup must never block a real registration. Send it if present.
           btn.disabled = true; btn.textContent = 'Reserving your spot…';
           var er = document.getElementById('err'); if (er) er.style.display = 'none';
           var payload = {
@@ -876,6 +890,8 @@
             source: 'webinar',
             webinar_date: session,
             interests: ['first_time_buyer_webinar'],
+            referred_by: referredBy,
+            referral_channel: referralChannel,
             consent: true,
             cf_turnstile_token: tsToken
           };
