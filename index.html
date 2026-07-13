@@ -283,6 +283,15 @@
     /* Embedded registration form */
     .reg-field { margin-bottom: 12px; }
     .reg-field > label { display:block; font-family: Manrope, sans-serif; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:800; color: var(--gold-light); margin-bottom:7px; }
+    /* Tap-to-answer qualifier questions (mirrors the DPA page's quiz). */
+    .q { margin-bottom: 14px; }
+    .qlabel { display:block; font-family: Manrope, sans-serif; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:800; color: var(--gold-light); margin-bottom:7px; }
+    .qhint { font-size: 11px; color: rgba(238,241,245,.55); margin-top: 6px; line-height: 1.45; }
+    .opts { display:flex; flex-wrap:wrap; gap:8px; }
+    .opt { background:#101415; border:1px solid rgba(255,255,255,.18); color:#eef1f5; border-radius:999px;
+           padding:9px 14px; font-size:13px; font-family:inherit; cursor:pointer; transition:all .15s; }
+    .opt:hover { border-color:#c9962b; }
+    .opt.sel { background:rgba(201,150,43,.16); border-color:#c9962b; color:#e8b95a; font-weight:600; }
     .reg-body select, .reg-body input[type=text], .reg-body input[type=email], .reg-body input[type=tel] {
       width:100%; background: rgba(11,15,16,0.55); border:1px solid var(--line); color: var(--ink);
       border-radius:8px; padding:12px 13px; font-size:0.92rem; font-family: inherit; margin-bottom:11px;
@@ -679,8 +688,35 @@
               </div>
               <script>(function(){var r=[["A true professional at every single level. 5 Stars +++","Mario B."],["Not your typical sales guy — he truly works for you.","Matt M."],["Above and beyond. Answered every question. TOP NOTCH!","Barry P."],["Educated, helpful, responsive — look no further.","Hannah L."],["Made the whole process so easy. He truly works for you.","Bridgit M."],["One of the best I've ever worked with. He'll do you right!","Reginald H."]];var i=0,q=document.getElementById("smTtQuote"),n=document.getElementById("smTtName");function s(){q.textContent="“"+r[i][0]+"”";n.textContent="— "+r[i][1];}s();setInterval(function(){q.style.opacity=0;n.style.opacity=0;setTimeout(function(){i=(i+1)%r.length;s();q.style.opacity=1;n.style.opacity=1;},400);},4500);})();</script>
               <div id="formView">
+                <!-- Two tap-to-answer questions BEFORE the contact fields.
+                     Cheap for the visitor (one tap), and they build commitment
+                     before the email box. Critically, they give Meta a quality
+                     signal: without these, every webinar lead looks identical
+                     and Meta buys the cheapest email address it can find.
+                     The session dropdown used to be field #1 — asking a total
+                     stranger to commit a Tuesday evening before they'd typed
+                     their name. It now sits below, where it belongs. -->
+                <div class="q">
+                  <label class="qlabel">1. When are you hoping to buy?</label>
+                  <div class="opts" data-field="timeline">
+                    <button type="button" class="opt" data-val="now">In the next 3 months</button>
+                    <button type="button" class="opt" data-val="soon">3&ndash;6 months</button>
+                    <button type="button" class="opt" data-val="later">6&ndash;12 months</button>
+                    <button type="button" class="opt" data-val="exploring">Just exploring</button>
+                  </div>
+                </div>
+                <div class="q">
+                  <label class="qlabel">2. How would you describe your credit?</label>
+                  <div class="opts" data-field="credit">
+                    <button type="button" class="opt" data-val="excellent">Excellent (720+)</button>
+                    <button type="button" class="opt" data-val="good">Good (680&ndash;719)</button>
+                    <button type="button" class="opt" data-val="fair">Fair (640&ndash;679)</button>
+                    <button type="button" class="opt" data-val="working">Still working on it</button>
+                  </div>
+                  <div class="qhint">No credit pull &mdash; this just helps Scott bring the right information to the class.</div>
+                </div>
                 <div class="reg-field">
-                  <label for="session">Choose your Tuesday session</label>
+                  <label for="session">Which Tuesday works best?</label>
                   <select id="session"></select>
                 </div>
                 <div class="reg-grid2">
@@ -924,6 +960,22 @@
       var nd = document.getElementById('nextDate');
       if (nd && sessions[0]) { nd.textContent = 'Next live session: ' + sessions[0].label; }
 
+      // Button-group single-select for the qualifier questions.
+      // PRODUCT PRINCIPLE: we SEGMENT, we do not SCREEN. No answer blocks a
+      // submit and no answer disqualifies anyone. The questions exist to sort
+      // leads and to give Meta a quality signal — never to filter people out.
+      var picks = { timeline: '', credit: '' };
+      document.querySelectorAll('.opts').forEach(function (group) {
+        var field = group.getAttribute('data-field');
+        group.querySelectorAll('.opt').forEach(function (b) {
+          b.addEventListener('click', function () {
+            group.querySelectorAll('.opt').forEach(function (x) { x.classList.remove('sel'); });
+            b.classList.add('sel');
+            picks[field] = b.getAttribute('data-val');
+          });
+        });
+      });
+
       function showErr(m) { var e = document.getElementById('err'); if (e) { e.textContent = m; e.style.display = 'block'; } }
       var btn = document.getElementById('submitBtn');
       if (btn) {
@@ -945,7 +997,17 @@
           var er = document.getElementById('err'); if (er) er.style.display = 'none';
           // A webinar registrant who also hands over a phone number is a
           // materially better lead than an email-only one. Give Meta the signal.
-          var leadValue = phone ? 60 : 25;
+          // Lead value: credit band is the strongest signal of whether this
+          // person can actually finance a home in the near term. A phone number
+          // and a short timeline both raise the value. Meta bids toward whatever
+          // we call valuable, so this is where we tell it the truth.
+          var CREDIT_SCORE = { excellent: 100, good: 75, fair: 40, working: 10 };
+          var leadValue = CREDIT_SCORE[picks.credit] || 25;
+          if (phone) leadValue += 20;
+          if (picks.timeline === 'now') leadValue += 30;
+          else if (picks.timeline === 'soon') leadValue += 15;
+          var isQualified = picks.credit === 'excellent' || picks.credit === 'good' || picks.credit === 'fair';
+
           var attr = (window.getAttribution ? window.getAttribution() : {});
           // Shared ID between the browser pixel and the server-side CAPI event.
           var eventId = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
@@ -958,7 +1020,11 @@
             interests: ['first_time_buyer_webinar'],
             referred_by: referredBy,
             referral_channel: referralChannel,
+            // hyper-handler maps these to timeline:/credit: tags in GHL.
+            timeline: picks.timeline,
+            credit: picks.credit,
             lead_value: leadValue,
+            qualified: isQualified,
             // TOP-LEVEL: hyper-handler reads body.fbp / body.fbc / body.event_id.
             event_id: eventId,
             fbp: attr.fbp || '',
@@ -987,8 +1053,21 @@
                 value: leadValue,
                 currency: 'USD',
                 has_phone: !!phone,
+                credit_band: picks.credit || 'unknown',
+                timeline: picks.timeline || 'unknown',
                 webinar_date: session
               }, { eventID: eventId });
+              // Near-term-financeable registrants (640+). Do NOT switch the
+              // campaign's optimization event to this until it has real weekly
+              // volume — a sparse event will starve delivery.
+              if (isQualified) {
+                fbq('trackCustom', 'QualifiedLead', {
+                  content_name: 'First-Time Homebuyer Webinar',
+                  value: leadValue,
+                  currency: 'USD',
+                  credit_band: picks.credit
+                }, { eventID: eventId + '-q' });
+              }
             }
             if (window.gtag) { gtag('event', 'generate_lead', { method: 'webinar_form', value: leadValue }); }
             document.getElementById('formView').style.display = 'none';
