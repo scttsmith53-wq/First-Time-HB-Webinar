@@ -947,6 +947,8 @@
           // materially better lead than an email-only one. Give Meta the signal.
           var leadValue = phone ? 60 : 25;
           var attr = (window.getAttribution ? window.getAttribution() : {});
+          // Shared ID between the browser pixel and the server-side CAPI event.
+          var eventId = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
           var payload = {
             full_name: (first + ' ' + last).trim(),
             first_name: first, last_name: last,
@@ -957,6 +959,16 @@
             referred_by: referredBy,
             referral_channel: referralChannel,
             lead_value: leadValue,
+            // TOP-LEVEL: hyper-handler reads body.fbp / body.fbc / body.event_id.
+            event_id: eventId,
+            fbp: attr.fbp || '',
+            fbc: attr.fbc || '',
+            utm_source: attr.utm_source || '',
+            utm_medium: attr.utm_medium || '',
+            utm_campaign: attr.utm_campaign || '',
+            utm_content: attr.utm_content || '',
+            utm_term: attr.utm_term || '',
+            event_source_url: window.location.href,
             attribution: attr,
             consent: true,
             cf_turnstile_token: tsToken
@@ -968,6 +980,7 @@
               body: JSON.stringify(payload)
             });
             if (!res.ok) { throw new Error('Registration failed'); }
+            // eventID must match the server-side CAPI event_id or Meta double-counts.
             if (window.fbq) {
               fbq('track', 'Lead', {
                 content_name: 'First-Time Homebuyer Webinar',
@@ -975,7 +988,7 @@
                 currency: 'USD',
                 has_phone: !!phone,
                 webinar_date: session
-              });
+              }, { eventID: eventId });
             }
             if (window.gtag) { gtag('event', 'generate_lead', { method: 'webinar_form', value: leadValue }); }
             document.getElementById('formView').style.display = 'none';
