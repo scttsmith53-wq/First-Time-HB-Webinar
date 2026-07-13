@@ -567,6 +567,43 @@
     }
   </style>
 <!-- Cloudflare Turnstile (bot protection) -->
+<!-- Attribution capture: UTM params + click IDs + Meta cookies.
+     Persists for the session so the value survives the funnel.
+     Exposes window.getAttribution() for the registration payload.
+     _fbp / _fbc are required for Conversions API event matching later. -->
+<script>
+(function(){
+  var KEY = 'sm_attr';
+  function fromUrl(){
+    var p = new URLSearchParams(window.location.search), out = {};
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+      var v = p.get(k); if (v) out[k] = v;
+    });
+    var fbclid = p.get('fbclid'); if (fbclid) out.fbclid = fbclid;
+    var gclid  = p.get('gclid');  if (gclid)  out.gclid  = gclid;
+    return out;
+  }
+  function cookie(n){
+    var m = document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)');
+    return m ? m.pop() : '';
+  }
+  var fresh = fromUrl(), stored = {};
+  try { stored = JSON.parse(sessionStorage.getItem(KEY) || '{}'); } catch(e){}
+  var attr = Object.keys(fresh).length ? fresh : stored;
+  try { sessionStorage.setItem(KEY, JSON.stringify(attr)); } catch(e){}
+
+  window.getAttribution = function(){
+    var a = {};
+    Object.keys(attr).forEach(function(k){ a[k] = attr[k]; });
+    a.fbp = cookie('_fbp') || '';
+    a.fbc = cookie('_fbc') || '';
+    if (!a.fbc && a.fbclid) { a.fbc = 'fb.1.' + Date.now() + '.' + a.fbclid; }
+    a.landing_page = window.location.hostname + window.location.pathname;
+    a.referrer = document.referrer || '';
+    return a;
+  };
+})();
+</script>
 </head>
 <body>
   <noscript>
@@ -906,6 +943,10 @@
           // hiccup must never block a real registration. Send it if present.
           btn.disabled = true; btn.textContent = 'Reserving your spot…';
           var er = document.getElementById('err'); if (er) er.style.display = 'none';
+          // A webinar registrant who also hands over a phone number is a
+          // materially better lead than an email-only one. Give Meta the signal.
+          var leadValue = phone ? 60 : 25;
+          var attr = (window.getAttribution ? window.getAttribution() : {});
           var payload = {
             full_name: (first + ' ' + last).trim(),
             first_name: first, last_name: last,
@@ -915,6 +956,8 @@
             interests: ['first_time_buyer_webinar'],
             referred_by: referredBy,
             referral_channel: referralChannel,
+            lead_value: leadValue,
+            attribution: attr,
             consent: true,
             cf_turnstile_token: tsToken
           };
@@ -925,8 +968,16 @@
               body: JSON.stringify(payload)
             });
             if (!res.ok) { throw new Error('Registration failed'); }
-            if (window.fbq) { fbq('track', 'Lead', { content_name: 'First-Time Homebuyer Webinar' }); }
-            if (window.gtag) { gtag('event', 'generate_lead', { method: 'webinar_form' }); }
+            if (window.fbq) {
+              fbq('track', 'Lead', {
+                content_name: 'First-Time Homebuyer Webinar',
+                value: leadValue,
+                currency: 'USD',
+                has_phone: !!phone,
+                webinar_date: session
+              });
+            }
+            if (window.gtag) { gtag('event', 'generate_lead', { method: 'webinar_form', value: leadValue }); }
             document.getElementById('formView').style.display = 'none';
             document.getElementById('successView').style.display = 'block';
             // Pass the registrant's info so the portal auto-logs them in.
