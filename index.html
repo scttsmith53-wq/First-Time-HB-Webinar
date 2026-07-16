@@ -964,7 +964,12 @@
           if (SKIPPED_SESSIONS.indexOf(ymd(d)) === -1) {
             var dt = new Date(d);
             var label = dt.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-            out.push({ label: label + ' · 7:00 PM MT', value: label + ' at 7:00 PM Mountain Time' });
+            // `value` stays the human string for backwards compatibility with
+            // everything already reading webinar_date. `iso` is the machine-
+            // readable twin — the reminder cron matches sessions on THIS, because
+            // 'Tuesday, July 14, 2026 at 7:00 PM Mountain Time' cannot be compared
+            // to anything without parsing English.
+            out.push({ label: label + ' · 7:00 PM MT', value: label + ' at 7:00 PM Mountain Time', iso: ymd(dt) });
           }
           d.setDate(d.getDate() + 7);
         }
@@ -973,7 +978,13 @@
       var sessions = upcomingTuesdays(6);
       var sessionSel = document.getElementById('session');
       if (sessionSel) {
-        sessions.forEach(function (s) { var o = document.createElement('option'); o.value = s.value; o.textContent = s.label; sessionSel.appendChild(o); });
+        sessions.forEach(function (s) {
+          var o = document.createElement('option');
+          o.value = s.value;
+          o.textContent = s.label;
+          o.setAttribute('data-iso', s.iso);
+          sessionSel.appendChild(o);
+        });
       }
       var nd = document.getElementById('nextDate');
       if (nd && sessions[0]) { nd.textContent = 'Next live session: ' + sessions[0].label; }
@@ -1004,7 +1015,18 @@
           var phone = (document.getElementById('phone').value || '').trim();
           var referredBy = (document.getElementById('referredBy').value || '').trim();
           var referralChannel = (document.getElementById('referralChannel').value || '').trim();
-          var session = document.getElementById('session').value;
+          var sessionEl = document.getElementById('session');
+          var session = sessionEl.value;
+          // Defensive: selectedOptions is unsupported on older mobile browsers,
+          // so fall back to indexing options[]. An empty string is acceptable —
+          // the reminder treats a missing ISO as legacy and includes the lead
+          // rather than silently dropping a real registration.
+          var sessionIso = '';
+          try {
+            var opt = (sessionEl.selectedOptions && sessionEl.selectedOptions[0]) ||
+                      sessionEl.options[sessionEl.selectedIndex];
+            sessionIso = (opt && opt.getAttribute('data-iso')) || '';
+          } catch (e) { sessionIso = ''; }
           var consent = document.getElementById('consent').checked;
           if (!first || !email || email.indexOf('@') < 0) { return showErr('Please enter your name and a valid email.'); }
           if (!consent) { return showErr('Please check the box to agree to be contacted.'); }
@@ -1035,6 +1057,7 @@
             email: email, phone: phone,
             source: 'webinar',
             webinar_date: session,
+            webinar_date_iso: sessionIso,
             interests: ['first_time_buyer_webinar'],
             referred_by: referredBy,
             referral_channel: referralChannel,
