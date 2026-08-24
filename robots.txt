@@ -1,0 +1,44 @@
+# smithapprovesme.com — place this file at the DOMAIN ROOT (https://smithapprovesme.com/robots.txt)
+# Purpose: explicitly welcome search engines AND AI answer engines so they can read
+# and cite your pages. (Your current robots.txt is empty — nothing is blocked, but
+# this makes the welcome explicit and future-proof.)
+
+User-agent: *
+Allow: /
+
+# --- AI answer engines (let them read + cite you) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Point crawlers at your sitemap (create one if you don't have it yet, or delete this line)
+Sitemap: https://smithapprovesme.com/sitemap.xml
