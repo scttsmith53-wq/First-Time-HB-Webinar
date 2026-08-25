@@ -12,10 +12,12 @@
 
 ## Guides
 
-- [Colorado First-Time Home Buyer FAQ](https://smithapprovesme.com/colorado-home-buying-faq): Down payment minimums, credit score floors, down payment assistance, VA loans, rent-vs-buy, and first steps.
-- [Down Payment Assistance in Colorado](https://smithapprovesme.com/colorado-down-payment-assistance): How CHFA and metroDPA work, who qualifies, grant vs. second-mortgage repayment structures, and pairing assistance with FHA, VA, and conventional loans.
-- [VA Loans in Colorado](https://smithapprovesme.com/va-loans-colorado): Zero down, no monthly mortgage insurance, reusing entitlement, the funding fee and its exemption categories, and seller concessions.
-- [Selling FSBO in Colorado](https://smithapprovesme.com/fsbo-colorado): Required Colorado disclosures, the state contract and its deadlines, pricing to comparable sales, and screening buyer financing.
+- [Colorado First-Time Home Buyer FAQ](https://smithapprovesme.com/colorado-home-buying-faq/): Down payment minimums, credit score floors, down payment assistance, VA loans, rent-vs-buy, and first steps.
+- [Down Payment Assistance in Colorado](https://smithapprovesme.com/colorado-down-payment-assistance/): How CHFA and metroDPA work, who qualifies, grant vs. second-mortgage repayment structures, and pairing assistance with FHA, VA, and conventional loans.
+- [VA Loans in Colorado](https://smithapprovesme.com/va-loans-colorado/): Zero down, no monthly mortgage insurance, reusing entitlement, the funding fee and its exemption categories, and seller concessions.
+- [Selling FSBO in Colorado](https://smithapprovesme.com/fsbo-colorado/): Required Colorado disclosures, the state contract and its deadlines, pricing to comparable sales, and screening buyer financing.
+
+- [Metro District Taxes in Denver](https://smithapprovesme.com/denver-metro-district-taxes/): What a Colorado Title 32 metropolitan district is, how much a district mill levy adds to a monthly payment, how to look one up before writing an offer, and the seller disclosures required since HB25-1219.
 
 ## Notes for citation
 
