@@ -1087,6 +1087,9 @@
               body: JSON.stringify(payload)
             });
             if (!res.ok) { throw new Error('Registration failed'); }
+            // hyper-handler returns { ok, magic_link, redirect }. The magic link
+            // signs them into the portal on the page matching this landing page.
+            var regOut = await res.json().catch(function () { return null; });
             // eventID must match the server-side CAPI event_id or Meta double-counts.
             if (window.fbq) {
               fbq('track', 'Lead', {
@@ -1113,16 +1116,19 @@
             if (window.gtag) { gtag('event', 'generate_lead', { method: 'webinar_form', value: leadValue }); }
             document.getElementById('formView').style.display = 'none';
             document.getElementById('successView').style.display = 'block';
-            // Pass the registrant's info so the portal auto-logs them in.
-            // The portal's middleware + initializeUserFromUrl require ?email= (not ?name=).
-            setTimeout(function () {
-              window.location.href = 'https://profile.smithapprovesme.com'
-                + '?email=' + encodeURIComponent(email)
-                + '&firstName=' + encodeURIComponent(first)
-                + '&lastName=' + encodeURIComponent(last)
-                + '&phone=' + encodeURIComponent(phone)
-                + '&source=webinar';
-            }, 1800);
+            // 2026-08-25: was redirecting to profile.smithapprovesme.com, which
+            // presents an invalid certificate (NET::ERR_CERT_COMMON_NAME_INVALID)
+            // — every registrant hit a browser security warning. It also relied
+            // on ?email= to slip past middleware, which never created a real
+            // session, so Shell.tsx pushed them to /login.
+            // hyper-handler v31 now returns a magic link routed through
+            // /auth/callback, which creates a genuine Supabase session.
+            // No PII in the URL — only the one-time token travels.
+            if (regOut && regOut.magic_link) {
+              setTimeout(function () { window.location.href = regOut.magic_link; }, 1800);
+            }
+            // If magic_link is missing, fail soft: the registrant stays on the
+            // success view rather than being stranded on a warning page.
           } catch (e) {
             btn.disabled = false; btn.textContent = 'Reserve My Spot';
             showErr('Something went wrong. Please try again or call Scott directly.');
